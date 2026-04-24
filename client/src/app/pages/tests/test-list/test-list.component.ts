@@ -41,7 +41,7 @@ import { Test, Grade } from '../../../core/models';
                   }
                 </div>
                 <h3>{{ test.titleAr }}</h3>
-                <p class="test-title-en">{{ test.titleEn }}</p>
+                <p class="test-desc">{{ test.descriptionAr }}</p>
                 @if (test.gradeName) { <span class="grade-tag">📚 {{ test.gradeName }}</span> }
                 <div class="test-meta">
                   <span><i class="fas fa-list-ol"></i> {{ test.questionCount }} {{ 'TESTS.QUESTIONS' | translate }}</span>

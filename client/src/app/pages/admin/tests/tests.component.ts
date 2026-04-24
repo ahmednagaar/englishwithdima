@@ -95,7 +95,7 @@ import { Test, Grade } from '../../../core/models';
                   <span class="badge badge-primary">{{ 'ENUMS.TEST_TYPE.' + test.testType | translate }}</span>
                 </div>
                 <h3>{{ test.titleAr }}</h3>
-                <p>{{ test.titleEn }}</p>
+                <p>{{ test.descriptionAr }}</p>
                 <div class="tac-meta">
                   <span>📝 {{ test.questionCount }} {{ 'ADMIN.QUESTIONS_SHORT' | translate }}</span>
                   <span>⭐ {{ test.totalPoints }} {{ 'ADMIN.PTS' | translate }}</span>

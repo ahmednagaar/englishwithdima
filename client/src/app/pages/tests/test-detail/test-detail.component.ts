@@ -20,7 +20,6 @@ import { TestDetail } from '../../../core/models';
             <div class="test-hero-content">
               <span class="badge badge-primary">{{ 'ENUMS.TEST_TYPE.' + test()!.testType | translate }}</span>
               <h1>{{ test()!.titleAr }}</h1>
-              <p class="test-en-title">{{ test()!.titleEn }}</p>
               @if (test()!.descriptionAr) { <p class="test-desc">{{ test()!.descriptionAr }}</p> }
             </div>
           </div>
