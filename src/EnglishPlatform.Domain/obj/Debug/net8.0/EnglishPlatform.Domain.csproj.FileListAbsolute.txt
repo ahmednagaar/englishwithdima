@@ -1,0 +1,12 @@
+D:\englishwithdima\src\EnglishPlatform.Domain\bin\Debug\net8.0\EnglishPlatform.Domain.deps.json
+D:\englishwithdima\src\EnglishPlatform.Domain\bin\Debug\net8.0\EnglishPlatform.Domain.dll
+D:\englishwithdima\src\EnglishPlatform.Domain\bin\Debug\net8.0\EnglishPlatform.Domain.pdb
+D:\englishwithdima\src\EnglishPlatform.Domain\obj\Debug\net8.0\EnglishPlatform.Domain.csproj.AssemblyReference.cache
+D:\englishwithdima\src\EnglishPlatform.Domain\obj\Debug\net8.0\EnglishPlatform.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\englishwithdima\src\EnglishPlatform.Domain\obj\Debug\net8.0\EnglishPlatform.Domain.AssemblyInfoInputs.cache
+D:\englishwithdima\src\EnglishPlatform.Domain\obj\Debug\net8.0\EnglishPlatform.Domain.AssemblyInfo.cs
+D:\englishwithdima\src\EnglishPlatform.Domain\obj\Debug\net8.0\EnglishPlatform.Domain.csproj.CoreCompileInputs.cache
+D:\englishwithdima\src\EnglishPlatform.Domain\obj\Debug\net8.0\EnglishPlatform.Domain.dll
+D:\englishwithdima\src\EnglishPlatform.Domain\obj\Debug\net8.0\refint\EnglishPlatform.Domain.dll
+D:\englishwithdima\src\EnglishPlatform.Domain\obj\Debug\net8.0\EnglishPlatform.Domain.pdb
+D:\englishwithdima\src\EnglishPlatform.Domain\obj\Debug\net8.0\ref\EnglishPlatform.Domain.dll

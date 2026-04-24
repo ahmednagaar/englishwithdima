@@ -1,0 +1,105 @@
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="hero-circle c1"></div>
+    <div class="hero-circle c2"></div>
+    <div class="hero-circle c3"></div>
+  </div>
+  <div class="container hero-content">
+    <div class="hero-text animate-fade-in-up">
+      <h1>{{ 'HOME.HERO_TITLE' | translate }}</h1>
+      <p>{{ 'HOME.HERO_SUBTITLE' | translate }}</p>
+      <div class="hero-actions">
+        <a routerLink="/auth/register" class="btn btn-primary btn-lg">
+          {{ 'HOME.START_LEARNING' | translate }}
+          <i class="fas fa-arrow-left" style="margin-inline-start:6px"></i>
+        </a>
+        <a routerLink="/grades" class="btn btn-secondary btn-lg">
+          {{ 'HOME.BROWSE_GRADES' | translate }}
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">9</span><span class="stat-label">{{ 'HOME.STAT_GRADES' | translate }}</span></div>
+        <div class="stat"><span class="stat-num">11</span><span class="stat-label">{{ 'HOME.STAT_QUESTION_TYPES' | translate }}</span></div>
+        <div class="stat"><span class="stat-num">4</span><span class="stat-label">{{ 'HOME.STAT_GAMES' | translate }}</span></div>
+      </div>
+    </div>
+    <div class="hero-visual animate-slide-right">
+      <div class="hero-card">
+        <div class="hero-emoji">🎓</div>
+        <div class="floating-icons">
+          <span class="fi" style="--delay:0s;--x:-60px;--y:-40px">📚</span>
+          <span class="fi" style="--delay:0.5s;--x:70px;--y:-30px">🎯</span>
+          <span class="fi" style="--delay:1s;--x:-50px;--y:50px">⭐</span>
+          <span class="fi" style="--delay:1.5s;--x:60px;--y:60px">🏆</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="section features-section">
+  <div class="container">
+    <h2 class="section-title">{{ 'HOME.WHY_US' | translate }}</h2>
+    <div class="features-grid">
+      @for (feature of features; track feature.key; let i = $index) {
+        <div class="feature-card" [style.animation-delay]="i * 0.1 + 's'">
+          <div class="feature-icon" [style.background]="feature.color + '15'" [style.color]="feature.color">
+            {{ feature.icon }}
+          </div>
+          <h3>{{ 'HOME.' + feature.key | translate }}</h3>
+          <p>{{ 'HOME.' + feature.descKey | translate }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Grades -->
+<section class="section grades-section">
+  <div class="container">
+    <h2 class="section-title">{{ 'HOME.GRADES_TITLE' | translate }}</h2>
+    <div class="grades-grid">
+      @for (grade of grades(); track grade.id; let i = $index) {
+        <a [routerLink]="['/tests']" [queryParams]="{gradeId: grade.id}" class="grade-card" [style.animation-delay]="i * 0.05 + 's'">
+          <div class="grade-emoji">{{ getGradeEmoji(grade.level) }}</div>
+          <div class="grade-info">
+            <h3>{{ grade.nameAr }}</h3>
+            <p>{{ grade.nameEn }}</p>
+            <span class="badge badge-primary">{{ grade.unitsCount }} {{ 'COMMON.UNITS' | translate }}</span>
+          </div>
+        </a>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Games -->
+<section class="section games-section">
+  <div class="container">
+    <h2 class="section-title">{{ 'HOME.GAMES_TITLE' | translate }}</h2>
+    <div class="games-grid">
+      @for (game of games; track game.key; let i = $index) {
+        <a [routerLink]="game.route" class="game-card" [style.animation-delay]="i * 0.1 + 's'">
+          <div class="game-icon" [style.background]="game.color + '15'">{{ game.icon }}</div>
+          <h3>{{ 'GAMES.' + game.key | translate }}</h3>
+          <p>{{ 'HOME.GAME_' + game.key + '_DESC' | translate }}</p>
+          <span class="play-btn" [style.background]="game.color">{{ 'GAMES.PLAY' | translate }} →</span>
+        </a>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-card">
+      <h2>{{ 'HOME.CTA_TITLE' | translate }}</h2>
+      <a routerLink="/auth/register" class="btn btn-primary btn-lg">
+        {{ 'HOME.CTA_BUTTON' | translate }}
+      </a>
+    </div>
+  </div>
+</section>
