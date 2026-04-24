@@ -40,6 +40,17 @@ import { AuthService } from '../../../core/services/auth.service';
                 </div>
               }
             </div>
+          } @else if (auth.isGuest()) {
+            <div class="user-menu" (click)="userMenuOpen.set(!userMenuOpen())">
+              <div class="avatar guest-avatar">👤</div>
+              <span class="user-name">{{ auth.guestName() }}</span>
+              @if (userMenuOpen()) {
+                <div class="dropdown" (click)="$event.stopPropagation()">
+                  <a routerLink="/auth/register" (click)="userMenuOpen.set(false)">{{ 'NAV.REGISTER' | translate }}</a>
+                  <a (click)="auth.logout(); userMenuOpen.set(false)" class="logout">{{ 'NAV.LOGOUT' | translate }}</a>
+                </div>
+              }
+            </div>
           } @else {
             <a routerLink="/auth/login" class="btn-login">{{ 'NAV.LOGIN' | translate }}</a>
           }
@@ -57,7 +68,10 @@ import { AuthService } from '../../../core/services/auth.service';
           <a routerLink="/games">{{ 'NAV.GAMES' | translate }}</a>
           <a routerLink="/contact">{{ 'NAV.CONTACT' | translate }}</a>
           <a routerLink="/booking">{{ 'NAV.BOOKING' | translate }}</a>
-          @if (!auth.isLoggedIn()) {
+          @if (auth.isGuest()) {
+            <a routerLink="/auth/register">{{ 'NAV.REGISTER' | translate }}</a>
+            <a (click)="auth.logout()">{{ 'NAV.LOGOUT' | translate }}</a>
+          } @else if (!auth.isLoggedIn()) {
             <a routerLink="/auth/login">{{ 'NAV.LOGIN' | translate }}</a>
             <a routerLink="/auth/register">{{ 'NAV.REGISTER' | translate }}</a>
           }

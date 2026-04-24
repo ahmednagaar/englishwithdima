@@ -146,6 +146,12 @@
     justify-content: center;
     font-weight: 700;
     font-size: 0.9rem;
+
+    &.guest-avatar {
+      background: #f5f3ff;
+      border: 2px solid #a855f7;
+      font-size: 1rem;
+    }
   }
 
   .user-name {

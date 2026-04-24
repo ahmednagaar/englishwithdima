@@ -11,6 +11,7 @@ export class AuthService {
   private tokenKey = 'ewd_access_token';
   private refreshKey = 'ewd_refresh_token';
   private userKey = 'ewd_user';
+  private guestKey = 'ewd_guest';
 
   // Signals for reactive state
   private _currentUser = signal<AuthResponse | null>(this.loadUser());
@@ -19,6 +20,22 @@ export class AuthService {
   readonly userRole = computed(() => this._currentUser()?.role || 'Guest');
   readonly isAdmin = computed(() => ['Admin', 'SuperAdmin'].includes(this.userRole()));
   readonly isTeacher = computed(() => this.userRole() === 'Teacher' || this.isAdmin());
+
+  // Guest state
+  private _guestSession = signal<GuestSession | null>(this.loadGuest());
+  readonly guestSession$ = this._guestSession.asReadonly();
+  readonly isGuest = computed(() => !!this._guestSession());
+  readonly guestName = computed(() => this._guestSession()?.displayName || '');
+
+  // Combined: either authenticated or guest
+  readonly isAuthenticated = computed(() => this.isLoggedIn() || this.isGuest());
+  readonly displayName = computed(() => {
+    const user = this._currentUser();
+    if (user) return `${user.firstName} ${user.lastName}`;
+    const guest = this._guestSession();
+    if (guest) return guest.displayName;
+    return '';
+  });
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -41,6 +58,33 @@ export class AuthService {
     return this.http.post<ApiResponse<GuestSession>>(`${this.apiUrl}/guest`, data);
   }
 
+  /** Store a guest session returned from the API */
+  handleGuestSession(data: GuestSession): void {
+    this.clearAuth(); // Clear any existing auth
+    localStorage.setItem(this.guestKey, JSON.stringify(data));
+    this._guestSession.set(data);
+  }
+
+  /** Create a local-only guest session (when API is unavailable) */
+  setLocalGuest(displayName: string, gradeId: number): void {
+    this.clearAuth(); // Clear any existing auth
+    const localGuest: GuestSession = {
+      sessionId: 'local-' + Date.now(),
+      displayName,
+      gradeId,
+      sessionToken: '',
+      expiresAt: new Date(Date.now() + 24 * 60 * 60 * 1000) // 24 hours
+    };
+    localStorage.setItem(this.guestKey, JSON.stringify(localGuest));
+    this._guestSession.set(localGuest);
+  }
+
+  /** Clear guest session */
+  clearGuest(): void {
+    localStorage.removeItem(this.guestKey);
+    this._guestSession.set(null);
+  }
+
   refreshToken(): Observable<ApiResponse<AuthResponse>> {
     const refreshToken = localStorage.getItem(this.refreshKey) || '';
     return this.http.post<ApiResponse<AuthResponse>>(`${this.apiUrl}/refresh`, { refreshToken })
@@ -57,6 +101,7 @@ export class AuthService {
       this.http.post(`${this.apiUrl}/logout`, { refreshToken }).subscribe();
     }
     this.clearAuth();
+    this.clearGuest();
     this.router.navigate(['/']);
   }
 
@@ -71,6 +116,7 @@ export class AuthService {
   }
 
   private handleAuth(data: AuthResponse): void {
+    this.clearGuest(); // Clear guest when doing real auth
     localStorage.setItem(this.tokenKey, data.accessToken);
     localStorage.setItem(this.refreshKey, data.refreshToken);
     localStorage.setItem(this.userKey, JSON.stringify(data));
@@ -88,6 +134,20 @@ export class AuthService {
     try {
       const stored = localStorage.getItem(this.userKey);
       return stored ? JSON.parse(stored) : null;
+    } catch { return null; }
+  }
+
+  private loadGuest(): GuestSession | null {
+    try {
+      const stored = localStorage.getItem(this.guestKey);
+      if (!stored) return null;
+      const guest: GuestSession = JSON.parse(stored);
+      // Check expiry
+      if (new Date(guest.expiresAt) <= new Date()) {
+        localStorage.removeItem(this.guestKey);
+        return null;
+      }
+      return guest;
     } catch { return null; }
   }
 }

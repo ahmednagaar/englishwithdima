@@ -39,7 +39,22 @@
     "GAME_MATCHING_DESC": "Match words with their meanings",
     "GAME_WHEEL_DESC": "Spin and answer to win",
     "GAME_DRAGDROP_DESC": "Drag items to correct zones",
-    "GAME_FLIPCARD_DESC": "Find matching card pairs"
+    "GAME_FLIPCARD_DESC": "Find matching card pairs",
+    "MODAL_TITLE": "How would you like to start?",
+    "MODAL_SUBTITLE": "Choose the best way for you to begin learning",
+    "CHOICE_SIGNUP": "Create Account",
+    "CHOICE_SIGNUP_DESC": "Register to save your progress, results, and track your level",
+    "CHOICE_GUEST": "Without Account",
+    "CHOICE_GUEST_DESC": "Just enter your name and start learning right away",
+    "RECOMMENDED": "⭐ Recommended",
+    "GUEST_TITLE": "Enter Your Name",
+    "GUEST_SUBTITLE": "Tell us your name so we can get started!",
+    "GUEST_NAME_LABEL": "Name",
+    "GUEST_NAME_PLACEHOLDER": "Type your name here...",
+    "GUEST_SELECT_GRADE": "-- Select your grade (optional) --",
+    "GUEST_START_BTN": "🚀 Let's Go!",
+    "GUEST_NAME_REQUIRED": "Please enter your name",
+    "GUEST_NAME_MIN": "Name must be at least 2 characters"
   },
   "AUTH": {
     "LOGIN_TITLE": "Welcome Back!",

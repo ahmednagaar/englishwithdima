@@ -39,7 +39,22 @@
     "GAME_MATCHING_DESC": "طابق الكلمات مع معانيها",
     "GAME_WHEEL_DESC": "أدر العجلة وأجب لتربح",
     "GAME_DRAGDROP_DESC": "اسحب العناصر إلى المناطق الصحيحة",
-    "GAME_FLIPCARD_DESC": "اعثر على أزواج البطاقات المتطابقة"
+    "GAME_FLIPCARD_DESC": "اعثر على أزواج البطاقات المتطابقة",
+    "MODAL_TITLE": "كيف تحب تبدأ؟",
+    "MODAL_SUBTITLE": "اختر الطريقة المناسبة لك للبدء في التعلم",
+    "CHOICE_SIGNUP": "إنشاء حساب",
+    "CHOICE_SIGNUP_DESC": "سجل حسابك لحفظ تقدمك ونتائجك ومتابعة مستواك",
+    "CHOICE_GUEST": "بدون حساب",
+    "CHOICE_GUEST_DESC": "ادخل اسمك فقط وابدأ التعلم فوراً",
+    "RECOMMENDED": "⭐ موصى به",
+    "GUEST_TITLE": "أدخل اسمك",
+    "GUEST_SUBTITLE": "اكتب اسمك عشان نعرفك ونبدأ معاك!",
+    "GUEST_NAME_LABEL": "الاسم",
+    "GUEST_NAME_PLACEHOLDER": "اكتب اسمك هنا...",
+    "GUEST_SELECT_GRADE": "-- اختر صفك الدراسي (اختياري) --",
+    "GUEST_START_BTN": "🚀 يلا نبدأ!",
+    "GUEST_NAME_REQUIRED": "من فضلك اكتب اسمك",
+    "GUEST_NAME_MIN": "الاسم لازم يكون حرفين على الأقل"
   },
   "AUTH": {
     "LOGIN_TITLE": "مرحباً بعودتك!",

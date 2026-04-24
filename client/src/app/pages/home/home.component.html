@@ -10,10 +10,10 @@
       <h1>{{ 'HOME.HERO_TITLE' | translate }}</h1>
       <p>{{ 'HOME.HERO_SUBTITLE' | translate }}</p>
       <div class="hero-actions">
-        <a routerLink="/auth/register" class="btn btn-primary btn-lg">
+        <button (click)="openChoiceModal()" class="btn btn-primary btn-lg" id="start-learning-btn">
           {{ 'HOME.START_LEARNING' | translate }}
           <i class="fas fa-arrow-left" style="margin-inline-start:6px"></i>
-        </a>
+        </button>
         <a routerLink="/grades" class="btn btn-secondary btn-lg">
           {{ 'HOME.BROWSE_GRADES' | translate }}
         </a>
@@ -97,9 +97,89 @@
   <div class="container">
     <div class="cta-card">
       <h2>{{ 'HOME.CTA_TITLE' | translate }}</h2>
-      <a routerLink="/auth/register" class="btn btn-primary btn-lg">
+      <button (click)="openChoiceModal()" class="btn btn-primary btn-lg" id="cta-start-btn">
         {{ 'HOME.CTA_BUTTON' | translate }}
-      </a>
+      </button>
     </div>
   </div>
 </section>
+
+<!-- ===== Choice Modal ===== -->
+@if (showChoiceModal) {
+  <div class="modal-overlay" (click)="closeModal($event)" id="choice-modal-overlay">
+    <div class="modal-container animate-scale-in" id="choice-modal">
+
+      <!-- Step 1: Choose path -->
+      @if (modalStep === 'choose') {
+        <div class="modal-header">
+          <span class="modal-emoji">🚀</span>
+          <h2>{{ 'HOME.MODAL_TITLE' | translate }}</h2>
+          <p>{{ 'HOME.MODAL_SUBTITLE' | translate }}</p>
+        </div>
+        <div class="choice-cards">
+          <a routerLink="/auth/register" class="choice-card choice-signup" (click)="showChoiceModal = false" id="choice-signup">
+            <div class="choice-icon">📝</div>
+            <h3>{{ 'HOME.CHOICE_SIGNUP' | translate }}</h3>
+            <p>{{ 'HOME.CHOICE_SIGNUP_DESC' | translate }}</p>
+            <span class="choice-badge badge-recommended">{{ 'HOME.RECOMMENDED' | translate }}</span>
+          </a>
+          <button class="choice-card choice-guest" (click)="modalStep = 'guest'" id="choice-guest">
+            <div class="choice-icon">👤</div>
+            <h3>{{ 'HOME.CHOICE_GUEST' | translate }}</h3>
+            <p>{{ 'HOME.CHOICE_GUEST_DESC' | translate }}</p>
+          </button>
+        </div>
+        <button class="modal-close-btn" (click)="showChoiceModal = false" id="modal-close-btn">
+          {{ 'COMMON.CANCEL' | translate }}
+        </button>
+      }
+
+      <!-- Step 2: Guest name form -->
+      @if (modalStep === 'guest') {
+        <div class="modal-header">
+          <span class="modal-emoji">👤</span>
+          <h2>{{ 'HOME.GUEST_TITLE' | translate }}</h2>
+          <p>{{ 'HOME.GUEST_SUBTITLE' | translate }}</p>
+        </div>
+        <form (ngSubmit)="onGuestSubmit()" class="guest-form">
+          <div class="form-group">
+            <label>{{ 'HOME.GUEST_NAME_LABEL' | translate }}</label>
+            <input
+              type="text"
+              [(ngModel)]="guestName"
+              name="guestName"
+              [placeholder]="'HOME.GUEST_NAME_PLACEHOLDER' | translate"
+              id="guest-name-input"
+              autocomplete="off"
+            >
+            @if (guestError) {
+              <span class="field-error">{{ guestError }}</span>
+            }
+          </div>
+          <div class="form-group">
+            <label>{{ 'AUTH.GRADE' | translate }}</label>
+            <select [(ngModel)]="guestGradeId" name="guestGrade" id="guest-grade-select">
+              <option [ngValue]="null" disabled>{{ 'HOME.GUEST_SELECT_GRADE' | translate }}</option>
+              @for (grade of grades(); track grade.id) {
+                <option [ngValue]="grade.id">{{ grade.nameAr }}</option>
+              }
+            </select>
+          </div>
+          @if (guestApiError) {
+            <div class="error-msg">{{ guestApiError }}</div>
+          }
+          <button type="submit" class="btn btn-primary btn-lg w-full" [disabled]="guestLoading" id="guest-submit-btn">
+            @if (guestLoading) {
+              <span class="btn-spinner"></span>
+            } @else {
+              {{ 'HOME.GUEST_START_BTN' | translate }}
+            }
+          </button>
+          <button type="button" class="modal-back-btn" (click)="modalStep = 'choose'" id="guest-back-btn">
+            ← {{ 'COMMON.BACK' | translate }}
+          </button>
+        </form>
+      }
+    </div>
+  </div>
+}
