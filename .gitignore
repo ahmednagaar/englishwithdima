@@ -1,0 +1,85 @@
+# ========================
+# .NET / C# Backend
+# ========================
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+*.dll
+*.exe
+*.pdb
+*.user
+*.suo
+*.cache
+*.vs/
+.vs/
+*.rsuser
+packages/
+*.nupkg
+project.lock.json
+*.nuget.props
+*.nuget.targets
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# User secrets
+secrets.json
+
+# appsettings overrides (keep base appsettings.json)
+appsettings.Development.json
+appsettings.Production.json
+appsettings.Local.json
+
+# ========================
+# Angular / Node Frontend
+# ========================
+node_modules/
+dist/
+.angular/
+.sass-cache/
+tmp/
+*.js.map
+
+# Angular CLI
+.angular/cache/
+
+# npm
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ========================
+# IDE / Editor
+# ========================
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# ========================
+# OS Files
+# ========================
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ========================
+# Misc
+# ========================
+*.log
+*.tmp
+*.bak
+*.orig
