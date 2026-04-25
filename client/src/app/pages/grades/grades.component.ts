@@ -17,57 +17,72 @@ import { Grade } from '../../core/models';
           <p class="section-subtitle">{{ 'GRADES.SUBTITLE' | translate }}</p>
         </div>
 
-        <div class="school-sections">
-          <!-- Primary School -->
-          <div class="school-section animate-fade-in-up">
-            <div class="section-badge primary">
-              {{ 'GRADES.PRIMARY' | translate }}
-            </div>
-            <div class="grades-grid">
-              @for (grade of primaryGrades(); track grade.id; let i = $index) {
-                <a [routerLink]="['/tests']" [queryParams]="{gradeId: grade.id}" class="grade-card" [style.animation-delay]="i * 0.08 + 's'">
-                  <div class="grade-number">{{ grade.level }}</div>
-                  <div class="grade-details">
-                    <h3>{{ grade.nameAr }}</h3>
-                    <p>{{ 'COMMON.UNITS' | translate }}: {{ grade.unitsCount }}</p>
-                  </div>
-                  <div class="grade-meta">
-                    <span class="badge badge-primary">{{ grade.unitsCount }} {{ 'COMMON.UNITS' | translate }}</span>
-                  </div>
-                  <div class="grade-arrow"><i class="fas fa-chevron-left"></i></div>
-                </a>
-              }
-            </div>
+        @if (loading()) {
+          <div class="grades-grid">
+            @for (i of [1,2,3,4,5,6]; track i) {
+              <div class="grade-card skeleton-card">
+                <div class="skeleton" style="width:50px;height:50px;border-radius:14px"></div>
+                <div style="flex:1">
+                  <div class="skeleton skeleton-title" style="width:70%"></div>
+                  <div class="skeleton skeleton-text" style="width:40%;margin-top:8px"></div>
+                </div>
+              </div>
+            }
           </div>
+        } @else {
+          <div class="school-sections">
+            <!-- Primary School -->
+            <div class="school-section animate-fade-in-up">
+              <div class="section-badge primary">
+                {{ 'GRADES.PRIMARY' | translate }}
+              </div>
+              <div class="grades-grid">
+                @for (grade of primaryGrades(); track grade.id; let i = $index) {
+                  <a [routerLink]="['/tests']" [queryParams]="{gradeId: grade.id}" class="grade-card" [style.animation-delay]="i * 0.08 + 's'">
+                    <div class="grade-number">{{ grade.level }}</div>
+                    <div class="grade-details">
+                      <h3>{{ grade.nameAr }}</h3>
+                      <p>{{ 'COMMON.UNITS' | translate }}: {{ grade.unitsCount }}</p>
+                    </div>
+                    <div class="grade-meta">
+                      <span class="badge badge-primary">{{ grade.unitsCount }} {{ 'COMMON.UNITS' | translate }}</span>
+                    </div>
+                    <div class="grade-arrow"><i class="fas fa-chevron-left"></i></div>
+                  </a>
+                }
+              </div>
+            </div>
 
-          <!-- Preparatory School -->
-          <div class="school-section animate-fade-in-up" style="animation-delay:0.3s">
-            <div class="section-badge prep">
-              {{ 'GRADES.PREP' | translate }}
-            </div>
-            <div class="grades-grid">
-              @for (grade of prepGrades(); track grade.id; let i = $index) {
-                <a [routerLink]="['/tests']" [queryParams]="{gradeId: grade.id}" class="grade-card prep-card" [style.animation-delay]="(i + 6) * 0.08 + 's'">
-                  <div class="grade-number prep-num">{{ grade.level - 6 }}</div>
-                  <div class="grade-details">
-                    <h3>{{ grade.nameAr }}</h3>
-                    <p>{{ 'COMMON.UNITS' | translate }}: {{ grade.unitsCount }}</p>
-                  </div>
-                  <div class="grade-meta">
-                    <span class="badge badge-primary">{{ grade.unitsCount }} {{ 'COMMON.UNITS' | translate }}</span>
-                  </div>
-                  <div class="grade-arrow"><i class="fas fa-chevron-left"></i></div>
-                </a>
-              }
+            <!-- Preparatory School -->
+            <div class="school-section animate-fade-in-up" style="animation-delay:0.3s">
+              <div class="section-badge prep">
+                {{ 'GRADES.PREP' | translate }}
+              </div>
+              <div class="grades-grid">
+                @for (grade of prepGrades(); track grade.id; let i = $index) {
+                  <a [routerLink]="['/tests']" [queryParams]="{gradeId: grade.id}" class="grade-card prep-card" [style.animation-delay]="(i + 6) * 0.08 + 's'">
+                    <div class="grade-number prep-num">{{ grade.level - 6 }}</div>
+                    <div class="grade-details">
+                      <h3>{{ grade.nameAr }}</h3>
+                      <p>{{ 'COMMON.UNITS' | translate }}: {{ grade.unitsCount }}</p>
+                    </div>
+                    <div class="grade-meta">
+                      <span class="badge badge-primary">{{ grade.unitsCount }} {{ 'COMMON.UNITS' | translate }}</span>
+                    </div>
+                    <div class="grade-arrow"><i class="fas fa-chevron-left"></i></div>
+                  </a>
+                }
+              </div>
             </div>
           </div>
-        </div>
+        }
       </div>
     </section>
   `,
   styles: [`
     .grades-page { padding:3rem 0 5rem; }
     .page-header { margin-bottom:3rem; }
+    .skeleton-card { padding:1.25rem; }
     .school-section { margin-bottom:3rem; }
     .section-badge { display:inline-flex; align-items:center; gap:.5rem; padding:.6rem 1.2rem; border-radius:25px; font-weight:700; font-size:1rem; margin-bottom:1.5rem;
       &.primary { background:rgba(99,102,241,.1); color:#6366f1; }
@@ -91,16 +106,21 @@ export class GradesComponent implements OnInit {
   grades = signal<Grade[]>([]);
   primaryGrades = signal<Grade[]>([]);
   prepGrades = signal<Grade[]>([]);
+  loading = signal(true);
 
   constructor(private api: ApiService) {}
 
   ngOnInit() {
-    this.api.getGrades().subscribe(res => {
-      if (res.success) {
-        this.grades.set(res.data);
-        this.primaryGrades.set(res.data.filter(g => g.level <= 6));
-        this.prepGrades.set(res.data.filter(g => g.level > 6));
-      }
+    this.api.getGrades().subscribe({
+      next: res => {
+        if (res.success) {
+          this.grades.set(res.data);
+          this.primaryGrades.set(res.data.filter(g => g.level <= 6));
+          this.prepGrades.set(res.data.filter(g => g.level > 6));
+        }
+        this.loading.set(false);
+      },
+      error: () => this.loading.set(false)
     });
   }
 }

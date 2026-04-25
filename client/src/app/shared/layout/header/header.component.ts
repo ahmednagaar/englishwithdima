@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, HostListener } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -55,25 +55,26 @@ import { AuthService } from '../../../core/services/auth.service';
             <a routerLink="/auth/login" class="btn-login">{{ 'NAV.LOGIN' | translate }}</a>
           }
 
-          <button class="mobile-toggle" (click)="mobileOpen.set(!mobileOpen())">
+          <button class="mobile-toggle" [class.open]="mobileOpen()" (click)="mobileOpen.set(!mobileOpen())" aria-label="القائمة">
             <span></span><span></span><span></span>
           </button>
         </div>
       </div>
 
       @if (mobileOpen()) {
+        <div class="nav-mobile-backdrop" (click)="mobileOpen.set(false)"></div>
         <nav class="nav-mobile" (click)="mobileOpen.set(false)">
-          <a routerLink="/">{{ 'NAV.HOME' | translate }}</a>
-          <a routerLink="/grades">{{ 'NAV.TESTS' | translate }}</a>
-          <a routerLink="/games">{{ 'NAV.GAMES' | translate }}</a>
-          <a routerLink="/contact">{{ 'NAV.CONTACT' | translate }}</a>
-          <a routerLink="/booking">{{ 'NAV.BOOKING' | translate }}</a>
+          <a routerLink="/">🏠 {{ 'NAV.HOME' | translate }}</a>
+          <a routerLink="/grades">📝 {{ 'NAV.TESTS' | translate }}</a>
+          <a routerLink="/games">🎮 {{ 'NAV.GAMES' | translate }}</a>
+          <a routerLink="/contact">📞 {{ 'NAV.CONTACT' | translate }}</a>
+          <a routerLink="/booking">📅 {{ 'NAV.BOOKING' | translate }}</a>
           @if (auth.isGuest()) {
-            <a routerLink="/auth/register">{{ 'NAV.REGISTER' | translate }}</a>
-            <a (click)="auth.logout()">{{ 'NAV.LOGOUT' | translate }}</a>
+            <a routerLink="/auth/register">📝 {{ 'NAV.REGISTER' | translate }}</a>
+            <a (click)="auth.logout()">🚪 {{ 'NAV.LOGOUT' | translate }}</a>
           } @else if (!auth.isLoggedIn()) {
-            <a routerLink="/auth/login">{{ 'NAV.LOGIN' | translate }}</a>
-            <a routerLink="/auth/register">{{ 'NAV.REGISTER' | translate }}</a>
+            <a routerLink="/auth/login">🔑 {{ 'NAV.LOGIN' | translate }}</a>
+            <a routerLink="/auth/register">📝 {{ 'NAV.REGISTER' | translate }}</a>
           }
         </nav>
       }
@@ -85,9 +86,19 @@ export class HeaderComponent {
   isScrolled = signal(false);
   mobileOpen = signal(false);
   userMenuOpen = signal(false);
+
   constructor(public auth: AuthService, private translate: TranslateService) {
     if (typeof window !== 'undefined') {
       window.addEventListener('scroll', () => this.isScrolled.set(window.scrollY > 50));
+    }
+  }
+
+  // Close user dropdown when clicking outside
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: Event) {
+    const target = event.target as HTMLElement;
+    if (this.userMenuOpen() && !target.closest('.user-menu')) {
+      this.userMenuOpen.set(false);
     }
   }
 

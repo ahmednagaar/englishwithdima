@@ -1,8 +1,8 @@
 .header {
   position: fixed;
   top: 0;
-  left: 0;
-  right: 0;
+  inset-inline-start: 0;
+  inset-inline-end: 0;
   z-index: 1000;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
@@ -32,12 +32,14 @@
   text-decoration: none;
   font-weight: 800;
   font-size: 1.3rem;
+  min-height: 48px;
 
   .logo-icon { font-size: 1.6rem; }
   .logo-text {
     background: linear-gradient(135deg, #6366f1, #8b5cf6, #a855f7);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }
 
@@ -54,13 +56,16 @@
     padding: 0.4rem 0;
     position: relative;
     transition: color 0.2s;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
 
     &::after {
       content: '';
       position: absolute;
       bottom: 0;
-      left: 0;
-      right: 0;
+      inset-inline-start: 0;
+      inset-inline-end: 0;
       height: 2px;
       background: linear-gradient(90deg, #6366f1, #a855f7);
       transform: scaleX(0);
@@ -95,20 +100,6 @@
   gap: 0.75rem;
 }
 
-.lang-toggle {
-  background: #f3f4f6;
-  border: none;
-  padding: 0.4rem 0.8rem;
-  border-radius: 20px;
-  font-weight: 700;
-  font-size: 0.85rem;
-  cursor: pointer;
-  transition: all 0.2s;
-  color: #6366f1;
-
-  &:hover { background: #e5e7eb; transform: scale(1.05); }
-}
-
 .btn-login {
   background: linear-gradient(135deg, #6366f1, #a855f7);
   color: white !important;
@@ -118,6 +109,9 @@
   font-weight: 600;
   font-size: 0.9rem;
   transition: all 0.2s;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
 
   &:hover { transform: translateY(-1px); box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4); }
   @media (max-width: 768px) { display: none; }
@@ -132,6 +126,7 @@
   padding: 0.3rem;
   border-radius: 25px;
   transition: background 0.2s;
+  min-height: 48px;
 
   &:hover { background: #f3f4f6; }
 
@@ -180,6 +175,9 @@
       font-weight: 500;
       transition: background 0.2s;
       cursor: pointer;
+      min-height: 48px;
+      display: flex;
+      align-items: center;
 
       &:hover { background: #f3f4f6; }
       &.logout { color: #ef4444; }
@@ -187,6 +185,7 @@
   }
 }
 
+// Hamburger with animated X transform
 .mobile-toggle {
   display: none;
   flex-direction: column;
@@ -194,41 +193,79 @@
   background: none;
   border: none;
   cursor: pointer;
-  padding: 4px;
+  padding: 8px;
+  min-height: 48px;
+  min-width: 48px;
+  align-items: center;
+  justify-content: center;
 
   span {
-    width: 24px;
+    width: 22px;
     height: 2.5px;
     background: #374151;
     border-radius: 2px;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
+    transform-origin: center;
+  }
+
+  &.open {
+    span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+    span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
   }
 
   @media (max-width: 768px) { display: flex; }
 }
 
+// Mobile nav backdrop
+.nav-mobile-backdrop {
+  position: fixed;
+  inset: 0;
+  top: 70px;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 90;
+  animation: fadeIn 0.2s ease;
+
+  @media (min-width: 769px) { display: none; }
+}
+
 .nav-mobile {
   display: none;
-  padding: 1rem 1.5rem;
+  padding: 0.5rem 1.5rem;
   background: white;
   border-top: 1px solid #e5e7eb;
+  animation: slideDown 0.25s ease;
 
   a {
-    display: block;
-    padding: 0.8rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 0;
     text-decoration: none;
     color: #374151;
     font-weight: 500;
     font-size: 1rem;
     border-bottom: 1px solid #f3f4f6;
+    min-height: 48px;
 
     &:last-child { border-bottom: none; }
+    &:hover { color: #6366f1; }
   }
 
   @media (max-width: 768px) { display: block; }
 }
 
 @keyframes dropDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
   from { opacity: 0; transform: translateY(-8px); }
   to { opacity: 1; transform: translateY(0); }
 }
