@@ -29,7 +29,20 @@ import { Test, Grade } from '../../../core/models';
 
         <!-- Test Cards -->
         @if (loading()) {
-          <div class="loading-spinner"></div>
+          <div class="tests-grid">
+            @for (i of [1,2,3,4,5,6]; track i) {
+              <div class="test-card skeleton-card">
+                <div class="skeleton skeleton-text" style="width:40%;height:20px"></div>
+                <div class="skeleton skeleton-title" style="width:80%"></div>
+                <div class="skeleton skeleton-text" style="width:60%"></div>
+                <div style="display:flex;gap:12px;margin-top:12px">
+                  <div class="skeleton skeleton-text" style="width:30%"></div>
+                  <div class="skeleton skeleton-text" style="width:30%"></div>
+                </div>
+                <div class="skeleton skeleton-btn" style="margin-top:16px;margin-inline-start:auto"></div>
+              </div>
+            }
+          </div>
         } @else {
           <div class="tests-grid">
             @for (test of tests(); track test.id; let i = $index) {
@@ -54,7 +67,7 @@ import { Test, Grade } from '../../../core/models';
                 </div>
               </div>
             } @empty {
-              <div class="empty-state">
+              <div class="empty-msg">
                 <span class="empty-icon">📝</span>
                 <p>{{ 'TESTS.NO_TESTS' | translate }}</p>
               </div>
@@ -91,7 +104,8 @@ import { Test, Grade } from '../../../core/models';
     .test-footer { display:flex; align-items:center; justify-content:space-between; border-top:1px solid #f3f4f6; padding-top:1rem; margin-top:.5rem;
       .pass-score { font-size:.8rem; color:#6b7280; font-weight:500; }
     }
-    .empty-state { grid-column:1/-1; text-align:center; padding:4rem 2rem;
+    .skeleton-card { padding:1.5rem; }
+    .empty-msg { grid-column:1/-1; text-align:center; padding:4rem 2rem;
       .empty-icon { font-size:4rem; display:block; margin-bottom:1rem; }
       p { color:#6b7280; font-size:1.1rem; }
     }

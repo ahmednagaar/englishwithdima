@@ -54,5 +54,5 @@ export const routes: Routes = [
       { path: 'games', loadComponent: () => import('./pages/admin/games/games.component').then(m => m.AdminGamesComponent) },
     ]
   },
-  { path: '**', redirectTo: '' }
+  { path: '**', loadComponent: () => import('./pages/not-found/not-found.component').then(m => m.NotFoundComponent) }
 ];
