@@ -125,7 +125,8 @@ builder.Services.AddCors(options =>
         policy.WithOrigins(
                 "http://localhost:4200",
                 "https://localhost:4200",
-                "http://localhost:5173")
+                "http://localhost:5173",
+                "https://englishwithdima.vercel.app")
             .AllowAnyMethod()
             .AllowAnyHeader()
             .AllowCredentials();
@@ -209,6 +210,31 @@ using (var scope = app.Services.CreateScope())
     {
         if (!await roleManager.RoleExistsAsync(role))
             await roleManager.CreateAsync(new IdentityRole(role));
+    }
+
+    // ===== Seed Default Teacher Account =====
+    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+    var teacherUser = await userManager.FindByNameAsync("dima");
+    if (teacherUser == null)
+    {
+        teacherUser = new ApplicationUser
+        {
+            UserName = "dima",
+            Email = "dima@englishwithdima.com",
+            FirstName = "ديما",
+            LastName = "المعلمة",
+            Role = "Teacher",
+            PreferredLanguage = "ar",
+            CreatedAt = DateTime.UtcNow,
+            IsActive = true,
+            EmailConfirmed = true
+        };
+        var createResult = await userManager.CreateAsync(teacherUser, "Dima@2024");
+        if (createResult.Succeeded)
+        {
+            await userManager.AddToRoleAsync(teacherUser, "Teacher");
+            Log.Information("✅ Default teacher account created: dima / Dima@2024");
+        }
     }
 }
 
