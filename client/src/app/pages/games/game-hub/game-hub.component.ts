@@ -29,29 +29,39 @@ import { Grade } from '../../../core/models';
         </div>
 
         <!-- Game Categories -->
-        <div class="games-showcase">
-          @for (game of gameTypes; track game.key; let i = $index) {
-            <div class="game-section animate-fade-in-up" [style.animation-delay]="i * 0.15 + 's'">
-              <div class="game-hero-card" [style.background]="game.gradient">
-                <div class="game-hero-content">
-                  <span class="game-emoji">{{ game.icon }}</span>
-                  <div>
-                    <h2>{{ 'GAMES.' + game.key | translate }}</h2>
-                    <p>{{ 'GAMES.' + game.key + '_DESC' | translate }}</p>
-                    <div class="game-features">
-                      @for (feat of getFeatures(game.key); track feat) {
-                        <span class="game-feat">✓ {{ feat }}</span>
-                      }
+        @if (loading()) {
+          <div class="games-showcase">
+            @for (i of [1,2,3,4]; track i) {
+              <div class="game-skeleton">
+                <div class="skeleton" style="height:160px;border-radius:20px"></div>
+              </div>
+            }
+          </div>
+        } @else {
+          <div class="games-showcase">
+            @for (game of gameTypes; track game.key; let i = $index) {
+              <div class="game-section animate-fade-in-up" [style.animation-delay]="i * 0.15 + 's'">
+                <div class="game-hero-card" [style.background]="game.gradient">
+                  <div class="game-hero-content">
+                    <span class="game-emoji">{{ game.icon }}</span>
+                    <div>
+                      <h2>{{ 'GAMES.' + game.key | translate }}</h2>
+                      <p>{{ 'GAMES.' + game.key + '_DESC' | translate }}</p>
+                      <div class="game-features">
+                        @for (feat of getFeatures(game.key); track feat) {
+                          <span class="game-feat">✓ {{ feat }}</span>
+                        }
+                      </div>
                     </div>
                   </div>
+                  <button class="btn btn-play" (click)="playGame(game.key)" aria-label="العب الآن">
+                    {{ 'GAMES.PLAY' | translate }} <i class="fas fa-play"></i>
+                  </button>
                 </div>
-                <button class="btn btn-play" (click)="playGame(game.key)">
-                  {{ 'GAMES.PLAY' | translate }} <i class="fas fa-play"></i>
-                </button>
               </div>
-            </div>
-          }
-        </div>
+            }
+          </div>
+        }
       </div>
     </section>
   `,
@@ -84,6 +94,7 @@ import { Grade } from '../../../core/models';
 export class GameHubComponent implements OnInit {
   grades = signal<Grade[]>([]);
   selectedGrade = signal<number>(1);
+  loading = signal(true);
   matchingGames = signal<any[]>([]);
   dragDropGames = signal<any[]>([]);
   flipCardGames = signal<any[]>([]);
@@ -109,6 +120,7 @@ export class GameHubComponent implements OnInit {
         this.grades.set(res.data);
         if (res.data.length > 0) this.selectedGrade.set(res.data[0].id);
       }
+      this.loading.set(false);
     });
 
     this.loadGamesForGrade();
