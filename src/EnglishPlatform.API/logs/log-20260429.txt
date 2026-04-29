@@ -191,3 +191,69 @@ CREATE TABLE [Tests] (
 2026-04-29 15:46:33.993 +03:00 [WRN] Entity 'Test' has a global query filter defined and is the required end of a relationship with the entity 'TestAttempt'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
 2026-04-29 15:46:33.993 +03:00 [WRN] Entity 'Question' has a global query filter defined and is the required end of a relationship with the entity 'TestQuestion'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
 2026-04-29 15:46:33.994 +03:00 [WRN] Entity 'WheelQuestion' has a global query filter defined and is the required end of a relationship with the entity 'WheelQuestionAttempt'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-04-29 15:47:01.447 +03:00 [INF] Start installing Hangfire SQL objects...
+2026-04-29 15:47:02.100 +03:00 [INF] Hangfire SQL objects installed.
+2026-04-29 15:47:03.066 +03:00 [WRN] Entity 'Question' has a global query filter defined and is the required end of a relationship with the entity 'AttemptAnswer'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-04-29 15:47:03.067 +03:00 [WRN] Entity 'DragDropQuestion' has a global query filter defined and is the required end of a relationship with the entity 'DragDropGameSession'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-04-29 15:47:03.067 +03:00 [WRN] Entity 'DragDropQuestion' has a global query filter defined and is the required end of a relationship with the entity 'DragDropItem'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-04-29 15:47:03.067 +03:00 [WRN] Entity 'DragDropQuestion' has a global query filter defined and is the required end of a relationship with the entity 'DragDropZone'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-04-29 15:47:03.067 +03:00 [WRN] Entity 'FlipCardQuestion' has a global query filter defined and is the required end of a relationship with the entity 'FlipCardGameSession'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-04-29 15:47:03.068 +03:00 [WRN] Entity 'FlipCardQuestion' has a global query filter defined and is the required end of a relationship with the entity 'FlipCardPair'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-04-29 15:47:03.068 +03:00 [WRN] Entity 'MatchingGame' has a global query filter defined and is the required end of a relationship with the entity 'MatchingGamePair'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-04-29 15:47:03.068 +03:00 [WRN] Entity 'MatchingGame' has a global query filter defined and is the required end of a relationship with the entity 'MatchingGameSession'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-04-29 15:47:03.068 +03:00 [WRN] Entity 'Question' has a global query filter defined and is the required end of a relationship with the entity 'MatchingPair'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-04-29 15:47:03.068 +03:00 [WRN] Entity 'Question' has a global query filter defined and is the required end of a relationship with the entity 'QuestionOption'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-04-29 15:47:03.068 +03:00 [WRN] Entity 'Question' has a global query filter defined and is the required end of a relationship with the entity 'SubQuestion'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-04-29 15:47:03.068 +03:00 [WRN] Entity 'Test' has a global query filter defined and is the required end of a relationship with the entity 'TestAttempt'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-04-29 15:47:03.068 +03:00 [WRN] Entity 'Question' has a global query filter defined and is the required end of a relationship with the entity 'TestQuestion'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-04-29 15:47:03.068 +03:00 [WRN] Entity 'WheelQuestion' has a global query filter defined and is the required end of a relationship with the entity 'WheelQuestionAttempt'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-04-29 15:47:04.056 +03:00 [INF] ✅ Default teacher account created: dima / Dima@2024
+2026-04-29 15:47:04.282 +03:00 [INF] 🚀 English with Dima API started successfully
+2026-04-29 15:47:04.401 +03:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: .@EnglishWithDimaDb'
+2026-04-29 15:47:04.401 +03:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-04-29 15:47:04.401 +03:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-04-29 15:47:04.436 +03:00 [INF] Server desktop-50hhs4k:40664:20e1924e successfully announced in 23.9743 ms
+2026-04-29 15:47:04.440 +03:00 [INF] Server desktop-50hhs4k:40664:20e1924e is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-04-29 15:47:04.445 +03:00 [INF] Server desktop-50hhs4k:40664:20e1924e all the dispatchers started
+2026-04-29 15:58:07.343 +03:00 [WRN] Failed to determine the https port for redirect.
+2026-04-29 15:58:07.363 +03:00 [ERR] HTTP GET /api/grades responded 500 in 19.7234 ms
+System.ArgumentException: The 'AppId' option must be provided. (Parameter 'AppId')
+   at Microsoft.AspNetCore.Authentication.Facebook.FacebookOptions.Validate()
+   at Microsoft.AspNetCore.Authentication.RemoteAuthenticationOptions.Validate(String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationBuilder.<>c__DisplayClass4_0`2.<AddSchemeHelper>b__1(TOptions o)
+   at Microsoft.Extensions.Options.ValidateOptions`1.Validate(String name, TOptions options)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd[TArg](String name, Func`3 createOptions, TArg factoryArgument)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.Get(String name)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.InitializeAsync(AuthenticationScheme scheme, HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandlerProvider.GetHandlerAsync(HttpContext context, String authenticationScheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-04-29 15:58:07.373 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentException: The 'AppId' option must be provided. (Parameter 'AppId')
+   at Microsoft.AspNetCore.Authentication.Facebook.FacebookOptions.Validate()
+   at Microsoft.AspNetCore.Authentication.RemoteAuthenticationOptions.Validate(String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationBuilder.<>c__DisplayClass4_0`2.<AddSchemeHelper>b__1(TOptions o)
+   at Microsoft.Extensions.Options.ValidateOptions`1.Validate(String name, TOptions options)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd[TArg](String name, Func`3 createOptions, TArg factoryArgument)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.Get(String name)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.InitializeAsync(AuthenticationScheme scheme, HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandlerProvider.GetHandlerAsync(HttpContext context, String authenticationScheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-04-29 16:00:05.108 +03:00 [INF] Starting leaderboard refresh...
+2026-04-29 16:00:05.181 +03:00 [INF] Leaderboard refresh completed for 9 grades

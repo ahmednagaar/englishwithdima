@@ -1,6 +1,6 @@
 export const environment = {
   production: false,
-  apiUrl: 'https://localhost:7001/api',
+  apiUrl: 'http://localhost:5244/api',
   facebookAppId: '',
   defaultLanguage: 'ar',
   supportedLanguages: ['ar', 'en'],

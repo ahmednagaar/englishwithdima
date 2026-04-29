@@ -70,12 +70,18 @@ builder.Services.AddAuthentication(options =>
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey)),
         ClockSkew = TimeSpan.Zero
     };
-})
-.AddFacebook(options =>
-{
-    options.AppId = builder.Configuration["Facebook:AppId"] ?? "";
-    options.AppSecret = builder.Configuration["Facebook:AppSecret"] ?? "";
 });
+
+// Only register Facebook auth if credentials are configured
+var fbAppId = builder.Configuration["Facebook:AppId"];
+if (!string.IsNullOrEmpty(fbAppId))
+{
+    builder.Services.AddAuthentication().AddFacebook(options =>
+    {
+        options.AppId = fbAppId;
+        options.AppSecret = builder.Configuration["Facebook:AppSecret"] ?? "";
+    });
+}
 
 // ===== Hangfire =====
 builder.Services.AddHangfire(config =>
