@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { ApiService } from '../../core/services/api.service';
+import { SeoService } from '../../core/services/seo.service';
 import { Grade } from '../../core/models';
 
 @Component({
@@ -45,6 +46,9 @@ import { Grade } from '../../core/models';
                 </div>
                 <div class="form-group"><label>{{ 'CONTACT.PREFERRED_DATES' | translate }}</label><input type="text" [(ngModel)]="form.preferredDates" name="dates" [placeholder]="'BOOKING.DATES_PLACEHOLDER' | translate"></div>
                 <div class="form-group"><label>{{ 'CONTACT.MESSAGE' | translate }}</label><textarea [(ngModel)]="form.message" name="message" rows="3"></textarea></div>
+                @if (error()) {
+                  <div class="error-msg" style="background:#fef2f2;color:#dc2626;padding:.7rem 1rem;border-radius:10px;font-size:.9rem;margin-bottom:1rem;text-align:center">⚠️ حدث خطأ في الإرسال — حاول مجدداً</div>
+                }
                 <button type="submit" class="btn btn-primary btn-lg w-full" [disabled]="loading()">{{ 'CONTACT.SUBMIT_BOOKING' | translate }}</button>
               </form>
             }
@@ -92,16 +96,25 @@ export class BookingComponent implements OnInit {
   grades = signal<Grade[]>([]);
   loading = signal(false);
   success = signal(false);
+  error = signal(false);
 
-  constructor(private api: ApiService) {}
+  constructor(private api: ApiService, private seo: SeoService) {}
 
-  ngOnInit() { this.api.getGrades().subscribe(res => { if (res.success) this.grades.set(res.data); }); }
+  ngOnInit() {
+    this.seo.setPage({
+      titleDefault: 'حجز حصة',
+      descriptionDefault: 'احجز حصة خاصة مع المعلمة ديما — دروس إنجليزي مخصصة لمستوى طفلك',
+      keywords: 'حجز حصة, دروس خصوصية, إنجليزي, المعلمة ديما, حصة إنجليزي'
+    });
+    this.api.getGrades().subscribe(res => { if (res.success) this.grades.set(res.data); });
+  }
 
   onSubmit() {
     this.loading.set(true);
+    this.error.set(false);
     this.api.sendBookingRequest(this.form).subscribe({
       next: () => { this.loading.set(false); this.success.set(true); this.form = { parentName: '', studentName: '', email: '', phone: '', gradeId: null, preferredDates: '', message: '' }; },
-      error: () => this.loading.set(false)
+      error: () => { this.loading.set(false); this.error.set(true); }
     });
   }
 }

@@ -4,6 +4,7 @@ import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from '../../core/services/auth.service';
+import { SeoService } from '../../core/services/seo.service';
 import { environment } from '../../../environments/environment';
 
 interface LeaderboardEntry {
@@ -236,10 +237,16 @@ export class LeaderboardComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
-    private auth: AuthService
+    private auth: AuthService,
+    private seo: SeoService
   ) {}
 
   ngOnInit() {
+    this.seo.setPage({
+      titleDefault: 'لوحة المتصدرين',
+      descriptionDefault: 'لوحة المتصدرين — تنافس مع زملائك واحصل على المركز الأول في منصة الإنجليزية مع ديما',
+      keywords: 'لوحة المتصدرين, منافسة, نقاط, ترتيب الطلاب, الإنجليزية مع ديما'
+    });
     // Default to user's grade
     const user = this.auth.currentUser();
     if (user?.gradeId) {

@@ -1,8 +1,9 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { ApiService } from '../../core/services/api.service';
+import { SeoService } from '../../core/services/seo.service';
 
 @Component({
   selector: 'app-contact',
@@ -58,6 +59,9 @@ import { ApiService } from '../../core/services/api.service';
                   <div class="form-group"><label for="c-subject">{{ 'CONTACT.SUBJECT' | translate }}</label><input type="text" [(ngModel)]="form.subject" name="subject" required id="c-subject" placeholder="الموضوع"></div>
                 </div>
                 <div class="form-group"><label for="c-msg">{{ 'CONTACT.MESSAGE' | translate }}</label><textarea [(ngModel)]="form.message" name="message" rows="5" required id="c-msg" placeholder="اكتب رسالتك هنا..."></textarea></div>
+                @if (error()) {
+                  <div class="error-msg">⚠️ حدث خطأ في الإرسال — حاول مجدداً أو تواصل عبر واتساب</div>
+                }
                 <button type="submit" class="btn btn-primary btn-lg w-full" [disabled]="loading()">
                   @if (loading()) {
                     <span class="btn-spinner"></span>
@@ -107,22 +111,32 @@ import { ApiService } from '../../core/services/api.service';
     @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
   `]
 })
-export class ContactComponent {
+export class ContactComponent implements OnInit {
   form = { senderName: '', senderEmail: '', senderPhone: '', subject: '', message: '' };
   honeypot = '';
   loading = signal(false);
   success = signal(false);
+  error = signal(false);
 
-  constructor(private api: ApiService) {}
+  constructor(private api: ApiService, private seo: SeoService) {}
+
+  ngOnInit() {
+    this.seo.setPage({
+      titleDefault: 'تواصل معنا',
+      descriptionDefault: 'تواصل مع فريق الإنجليزية مع ديما — واتساب، بريد إلكتروني، أو نموذج مباشر',
+      keywords: 'تواصل معنا, الإنجليزية مع ديما, واتساب, دعم فني'
+    });
+  }
 
   onSubmit() {
     // Honeypot spam check
     if (this.honeypot) return;
 
     this.loading.set(true);
+    this.error.set(false);
     this.api.sendContactMessage(this.form).subscribe({
       next: () => { this.loading.set(false); this.success.set(true); this.form = { senderName: '', senderEmail: '', senderPhone: '', subject: '', message: '' }; },
-      error: () => this.loading.set(false)
+      error: () => { this.loading.set(false); this.error.set(true); }
     });
   }
 }

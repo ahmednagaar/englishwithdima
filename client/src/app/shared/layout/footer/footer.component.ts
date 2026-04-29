@@ -27,6 +27,7 @@ import { TranslateModule } from '@ngx-translate/core';
               <h4>{{ 'NAV.HOME' | translate }}</h4>
               <a routerLink="/grades">{{ 'NAV.TESTS' | translate }}</a>
               <a routerLink="/games">{{ 'NAV.GAMES' | translate }}</a>
+              <a routerLink="/leaderboard">🏆 المتصدرين</a>
               <a routerLink="/contact">{{ 'NAV.CONTACT' | translate }}</a>
               <a routerLink="/booking">{{ 'NAV.BOOKING' | translate }}</a>
             </div>

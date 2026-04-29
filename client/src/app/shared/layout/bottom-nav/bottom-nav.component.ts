@@ -38,8 +38,8 @@ import { filter, Subscription } from 'rxjs';
     .bottom-nav {
       position: fixed;
       bottom: 0;
-      left: 0;
-      right: 0;
+      inset-inline-start: 0;
+      inset-inline-end: 0;
       height: 64px;
       background: white;
       border-top: 1px solid var(--gray-200);
