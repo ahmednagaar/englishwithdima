@@ -20,9 +20,7 @@ import { TranslateModule } from '@ngx-translate/core';
               <span class="footer-logo">📚 {{ 'APP_NAME' | translate }}</span>
               <p class="footer-desc">{{ 'HOME.HERO_SUBTITLE' | translate }}</p>
               <div class="social-links">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/201000000000?text=مرحباً" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
               </div>
             </div>
             <div class="footer-links">

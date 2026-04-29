@@ -87,8 +87,18 @@ import { AttemptStart, Question, SubmitAttempt, AnswerSubmission } from '../../.
 
               @if (currentQuestion()!.imageUrl) { <img [src]="currentQuestion()!.imageUrl" class="q-image" alt="صورة السؤال" loading="lazy"> }
 
-              <!-- MCQ Options -->
-              @if (currentQuestion()!.options.length > 0) {
+              @if (currentQuestion()!.questionType === 'TrueFalse') {
+                <div class="tf-container">
+                  <button class="tf-btn true-btn" [class.selected]="isTrueFalseSelected('True')" (click)="selectTrueFalse('True')">
+                    <span class="tf-icon">✓</span>
+                    <span class="tf-label">صح</span>
+                  </button>
+                  <button class="tf-btn false-btn" [class.selected]="isTrueFalseSelected('False')" (click)="selectTrueFalse('False')">
+                    <span class="tf-icon">✗</span>
+                    <span class="tf-label">خطأ</span>
+                  </button>
+                </div>
+              } @else if (currentQuestion()!.options.length > 0) {
                 <div class="options-list">
                   @for (opt of currentQuestion()!.options; track opt.id; let j = $index) {
                     <label class="option-item" [class.selected]="isOptionSelected(opt.id)" (click)="selectOption(opt.id)"
@@ -98,13 +108,25 @@ import { AttemptStart, Question, SubmitAttempt, AnswerSubmission } from '../../.
                     </label>
                   }
                 </div>
-              } @else {
-                <!-- Text Answer -->
+              } @else if (currentQuestion()!.questionType === 'FillInBlank') {
                 <div class="form-group">
-                  <label>اكتب إجابتك هنا</label>
-                  <textarea [(ngModel)]="textAnswer" name="textAnswer" rows="3"
+                  <label>اكتب الإجابة</label>
+                  <input type="text" [(ngModel)]="textAnswer" name="textAnswer" class="fill-input"
                     [placeholder]="'TESTS.TYPE_ANSWER' | translate"
+                    (input)="saveCurrentAnswer()" autocomplete="off">
+                </div>
+              } @else {
+                <div class="writing-group">
+                  <label>اكتب إجابتك هنا</label>
+                  <textarea [(ngModel)]="textAnswer" name="textAnswer" rows="5" class="writing-area"
+                    [maxlength]="500" placeholder="اكتب هنا..."
                     (input)="saveCurrentAnswer()"></textarea>
+                  <div class="writing-footer">
+                    <span class="char-counter" [class.near]="textAnswer.length > 400" [class.limit]="textAnswer.length >= 500">
+                      {{ textAnswer.length }} / 500
+                    </span>
+                    <span class="writing-note">✍️ ستراجع المعلمة إجابتك</span>
+                  </div>
                 </div>
               }
             }
@@ -248,6 +270,43 @@ import { AttemptStart, Question, SubmitAttempt, AnswerSubmission } from '../../.
       transition: all 0.2s; flex-shrink:0;
     }
     .option-text { font-size: var(--text-answer, 19px); color:#374151; font-weight:500; }
+
+    /* True/False */
+    .tf-container { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:2rem; }
+    .tf-btn {
+      min-height:100px; border-radius:20px; border:3px solid #e5e7eb;
+      font-size:28px; font-weight:700; display:flex; flex-direction:column;
+      align-items:center; justify-content:center; gap:8px; cursor:pointer;
+      transition:all .2s; background:white;
+      .tf-icon { font-size:40px; }
+      .tf-label { font-size:20px; }
+      &:active { transform:scale(0.96); }
+      &.true-btn.selected  { background:#DCFCE7; border-color:#22C55E; color:#166534; }
+      &.false-btn.selected { background:#FEE2E2; border-color:#EF4444; color:#991B1B; }
+    }
+
+    /* Fill input */
+    .fill-input {
+      width:100%; padding:14px; border:2px solid #e5e7eb; border-radius:12px;
+      font-size:18px; transition:border-color .2s;
+      &:focus { border-color:#6366f1; outline:none; }
+    }
+
+    /* Writing */
+    .writing-group { margin-bottom:2rem; }
+    .writing-area {
+      width:100%; min-height:140px; resize:vertical; border:2px solid #e5e7eb;
+      border-radius:12px; padding:14px; font-size:16px; line-height:1.6;
+      transition:border-color .2s;
+      &:focus { border-color:#6366f1; outline:none; }
+    }
+    .writing-footer { display:flex; justify-content:space-between; align-items:center; margin-top:8px; }
+    .char-counter {
+      font-size:13px; color:#9ca3af; font-variant-numeric:tabular-nums;
+      &.near { color:#f59e0b; }
+      &.limit { color:#ef4444; font-weight:700; }
+    }
+    .writing-note { font-size:12px; color:#6b7280; }
 
     /* Navigation */
     .q-nav { display:flex; justify-content:space-between; margin-top:2rem; padding-top:1.5rem; border-top:1px solid #f3f4f6; gap:0.75rem; }
@@ -420,6 +479,23 @@ export class TestTakeComponent implements OnInit, OnDestroy {
 
   isOptionSelected(optionId: number): boolean {
     return this.answers[this.currentIndex()]?.selectedOptionIds?.includes(optionId) || false;
+  }
+
+  selectTrueFalse(value: 'True' | 'False') {
+    const q = this.currentQuestion();
+    if (!q) return;
+    const opt = q.options.find(o => o.optionText === value);
+    if (opt) {
+      this.answers[this.currentIndex()] = { questionId: q.id, selectedOptionIds: [opt.id], timeSpentSeconds: this.getTimeSpent() };
+      this.saveToLocalStorage();
+    }
+  }
+
+  isTrueFalseSelected(value: string): boolean {
+    const q = this.currentQuestion();
+    if (!q) return false;
+    const opt = q.options.find(o => o.optionText === value);
+    return opt ? this.isOptionSelected(opt.id) : false;
   }
 
   nextQuestion() {

@@ -23,9 +23,9 @@ import { filter, Subscription } from 'rxjs';
           <i class="fas fa-gamepad"></i>
           <span>الألعاب</span>
         </a>
-        <a routerLink="/grades" routerLinkActive="active" class="nav-item">
-          <i class="fas fa-graduation-cap"></i>
-          <span>الصفوف</span>
+        <a routerLink="/leaderboard" routerLinkActive="active" class="nav-item">
+          <i class="fas fa-trophy"></i>
+          <span>المتصدرين</span>
         </a>
         <a routerLink="/contact" routerLinkActive="active" class="nav-item">
           <i class="fas fa-envelope"></i>

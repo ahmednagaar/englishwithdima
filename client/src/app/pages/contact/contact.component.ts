@@ -18,15 +18,11 @@ import { ApiService } from '../../core/services/api.service';
         <div class="contact-grid">
           <!-- Contact Info -->
           <div class="contact-info animate-fade-in-up">
-            <div class="info-card">
-              <div class="info-icon">📞</div>
-              <h3>{{ 'CONTACT.PHONE_LABEL' | translate }}</h3>
-              <a href="tel:+201000000000" dir="ltr" class="info-link">+20 100 000 0000</a>
-            </div>
             <div class="info-card whatsapp-card">
               <div class="info-icon">💬</div>
-              <h3>واتساب</h3>
-              <a href="https://wa.me/201000000000?text=مرحباً%20أريد%20الاستفسار" target="_blank" class="btn btn-success btn-lg w-full">
+              <h3>واتساب — أسرع طريقة للتواصل</h3>
+              <p style="color:#6b7280;font-size:0.85rem;margin-bottom:0.75rem">راسلنا مباشرة عبر واتساب وسنرد عليك في أقرب وقت</p>
+              <a href="https://wa.me/201000000000?text=مرحباً%20أريد%20الاستفسار%20عن%20منصة%20الإنجليزية%20مع%20ديما" target="_blank" class="btn btn-success btn-lg w-full">
                 <i class="fab fa-whatsapp"></i>
                 فتح واتساب
               </a>

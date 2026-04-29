@@ -1,4 +1,6 @@
 import { HttpInterceptorFn, HttpErrorResponse } from '@angular/common/http';
+import { inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { catchError, throwError } from 'rxjs';
 
 /** Maps HTTP status codes to child-friendly Arabic error messages */
@@ -15,10 +17,17 @@ const errorMessages: Record<number, string> = {
 };
 
 export const errorInterceptor: HttpInterceptorFn = (req, next) => {
+  const router = inject(Router);
+
   return next(req).pipe(
     catchError((error: HttpErrorResponse) => {
-      // Attach a user-friendly Arabic message to the error
       const friendlyMessage = errorMessages[error.status] || errorMessages[500];
+
+      // Navigate to 500 page on server errors (but NOT during test-taking)
+      if (error.status >= 500 && !router.url.includes('/take')) {
+        router.navigate(['/error/500']);
+      }
+
       const enhancedError = {
         ...error,
         friendlyMessage,

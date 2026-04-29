@@ -45,6 +45,10 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/booking/booking.component').then(m => m.BookingComponent)
   },
   {
+    path: 'leaderboard',
+    loadComponent: () => import('./pages/leaderboard/leaderboard.component').then(m => m.LeaderboardComponent)
+  },
+  {
     path: 'profile',
     loadComponent: () => import('./pages/profile/profile.component').then(m => m.ProfileComponent),
     canActivate: [authGuard]
@@ -58,6 +62,10 @@ export const routes: Routes = [
       { path: 'tests', loadComponent: () => import('./pages/admin/tests/tests.component').then(m => m.AdminTestsComponent) },
       { path: 'games', loadComponent: () => import('./pages/admin/games/games.component').then(m => m.AdminGamesComponent) },
     ]
+  },
+  {
+    path: 'error/500',
+    loadComponent: () => import('./pages/server-error/server-error.component').then(m => m.ServerErrorComponent)
   },
   { path: '**', loadComponent: () => import('./pages/not-found/not-found.component').then(m => m.NotFoundComponent) }
 ];

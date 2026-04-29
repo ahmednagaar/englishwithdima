@@ -5,6 +5,7 @@ import { HeaderComponent } from './shared/layout/header/header.component';
 import { FooterComponent } from './shared/layout/footer/footer.component';
 import { BottomNavComponent } from './shared/layout/bottom-nav/bottom-nav.component';
 import { WhatsappButtonComponent } from './shared/components/whatsapp-button/whatsapp-button.component';
+import { GuestBannerComponent } from './shared/components/guest-banner/guest-banner.component';
 import { TranslateService } from '@ngx-translate/core';
 import { SignalRService } from './core/services/signalr.service';
 import { AuthService } from './core/services/auth.service';
@@ -15,7 +16,7 @@ import { trigger, transition, style, animate } from '@angular/animations';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, HeaderComponent, FooterComponent, BottomNavComponent, WhatsappButtonComponent],
+  imports: [CommonModule, RouterOutlet, HeaderComponent, FooterComponent, BottomNavComponent, WhatsappButtonComponent, GuestBannerComponent],
   animations: [
     trigger('routeAnim', [
       transition('* <=> *', [
@@ -33,6 +34,7 @@ import { trigger, transition, style, animate } from '@angular/animations';
     }
 
     <app-header />
+    <app-guest-banner />
     <main class="main-content" [@routeAnim]="currentRoute()">
       <router-outlet />
     </main>

@@ -20,6 +20,7 @@ import { AuthService } from '../../../core/services/auth.service';
           <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">{{ 'NAV.HOME' | translate }}</a>
           <a routerLink="/grades">{{ 'NAV.TESTS' | translate }}</a>
           <a routerLink="/games">{{ 'NAV.GAMES' | translate }}</a>
+          <a routerLink="/leaderboard">🏆 المتصدرين</a>
           <a routerLink="/contact">{{ 'NAV.CONTACT' | translate }}</a>
           <a routerLink="/booking" class="btn-booking">{{ 'NAV.BOOKING' | translate }}</a>
         </nav>
@@ -67,6 +68,7 @@ import { AuthService } from '../../../core/services/auth.service';
           <a routerLink="/">🏠 {{ 'NAV.HOME' | translate }}</a>
           <a routerLink="/grades">📝 {{ 'NAV.TESTS' | translate }}</a>
           <a routerLink="/games">🎮 {{ 'NAV.GAMES' | translate }}</a>
+          <a routerLink="/leaderboard">🏆 المتصدرين</a>
           <a routerLink="/contact">📞 {{ 'NAV.CONTACT' | translate }}</a>
           <a routerLink="/booking">📅 {{ 'NAV.BOOKING' | translate }}</a>
           @if (auth.isGuest()) {
