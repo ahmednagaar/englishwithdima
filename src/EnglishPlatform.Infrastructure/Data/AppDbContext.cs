@@ -83,6 +83,14 @@ public class AppDbContext : IdentityDbContext<ApplicationUser>
     {
         base.OnModelCreating(builder);
 
+        // ===== SQL Server: Disable cascading deletes globally =====
+        // SQL Server does not allow multiple cascade paths. Set all FKs to NoAction.
+        foreach (var relationship in builder.Model.GetEntityTypes()
+            .SelectMany(e => e.GetForeignKeys()))
+        {
+            relationship.DeleteBehavior = DeleteBehavior.NoAction;
+        }
+
         // ===== Users & Auth =====
         builder.Entity<ApplicationUser>(e =>
         {
@@ -303,7 +311,7 @@ public class AppDbContext : IdentityDbContext<ApplicationUser>
             e.Property(a => a.SegmentLanded).HasMaxLength(100);
             e.Property(a => a.SelectedAnswer).HasMaxLength(500);
             e.HasOne(a => a.Session).WithMany(s => s.Attempts).HasForeignKey(a => a.SessionId);
-            e.HasOne(a => a.Question).WithMany().HasForeignKey(a => a.QuestionId);
+            e.HasOne(a => a.Question).WithMany().HasForeignKey(a => a.QuestionId).OnDelete(DeleteBehavior.NoAction);
         });
 
         // ===== Drag & Drop Game =====

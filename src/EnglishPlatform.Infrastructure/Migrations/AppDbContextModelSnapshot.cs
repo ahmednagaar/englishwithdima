@@ -334,7 +334,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                             Id = 1,
                             BadgeType = 1,
                             BonusPoints = 10,
-                            CreatedAt = new DateTime(2026, 4, 16, 6, 4, 53, 804, DateTimeKind.Utc).AddTicks(5193),
+                            CreatedAt = new DateTime(2026, 4, 29, 12, 16, 45, 432, DateTimeKind.Utc).AddTicks(4488),
                             DescriptionAr = "أكمل أول اختبار",
                             DescriptionEn = "Complete your first test",
                             Icon = "🎯",
@@ -348,7 +348,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                             Id = 2,
                             BadgeType = 2,
                             BonusPoints = 50,
-                            CreatedAt = new DateTime(2026, 4, 16, 6, 4, 53, 804, DateTimeKind.Utc).AddTicks(5204),
+                            CreatedAt = new DateTime(2026, 4, 29, 12, 16, 45, 432, DateTimeKind.Utc).AddTicks(4512),
                             DescriptionAr = "احصل على 100% في أي اختبار",
                             DescriptionEn = "Get 100% on any test",
                             Icon = "⭐",
@@ -362,7 +362,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                             Id = 3,
                             BadgeType = 3,
                             BonusPoints = 25,
-                            CreatedAt = new DateTime(2026, 4, 16, 6, 4, 53, 804, DateTimeKind.Utc).AddTicks(5205),
+                            CreatedAt = new DateTime(2026, 4, 29, 12, 16, 45, 432, DateTimeKind.Utc).AddTicks(4514),
                             CriteriaType = "Streak",
                             CriteriaValue = 7,
                             DescriptionAr = "نشاط 7 أيام متتالية",
@@ -378,7 +378,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                             Id = 4,
                             BadgeType = 4,
                             BonusPoints = 100,
-                            CreatedAt = new DateTime(2026, 4, 16, 6, 4, 53, 804, DateTimeKind.Utc).AddTicks(5207),
+                            CreatedAt = new DateTime(2026, 4, 29, 12, 16, 45, 432, DateTimeKind.Utc).AddTicks(4517),
                             CriteriaType = "Streak",
                             CriteriaValue = 30,
                             DescriptionAr = "نشاط 30 يوم متتالي",
@@ -394,7 +394,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                             Id = 5,
                             BadgeType = 5,
                             BonusPoints = 50,
-                            CreatedAt = new DateTime(2026, 4, 16, 6, 4, 53, 804, DateTimeKind.Utc).AddTicks(5209),
+                            CreatedAt = new DateTime(2026, 4, 29, 12, 16, 45, 432, DateTimeKind.Utc).AddTicks(4525),
                             DescriptionAr = "احتل المركز الثالث أو أعلى",
                             DescriptionEn = "Reach top 3 on grade leaderboard",
                             Icon = "🥉",
@@ -408,7 +408,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                             Id = 6,
                             BadgeType = 6,
                             BonusPoints = 100,
-                            CreatedAt = new DateTime(2026, 4, 16, 6, 4, 53, 804, DateTimeKind.Utc).AddTicks(5210),
+                            CreatedAt = new DateTime(2026, 4, 29, 12, 16, 45, 432, DateTimeKind.Utc).AddTicks(4526),
                             DescriptionAr = "احتل المركز الأول",
                             DescriptionEn = "Reach #1 on grade leaderboard",
                             Icon = "🏆",
@@ -422,7 +422,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                             Id = 7,
                             BadgeType = 7,
                             BonusPoints = 40,
-                            CreatedAt = new DateTime(2026, 4, 16, 6, 4, 53, 804, DateTimeKind.Utc).AddTicks(5211),
+                            CreatedAt = new DateTime(2026, 4, 29, 12, 16, 45, 432, DateTimeKind.Utc).AddTicks(4530),
                             DescriptionAr = "أكمل جميع أنواع الألعاب",
                             DescriptionEn = "Complete all 4 game types",
                             Icon = "🎮",
@@ -436,7 +436,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                             Id = 8,
                             BadgeType = 8,
                             BonusPoints = 30,
-                            CreatedAt = new DateTime(2026, 4, 16, 6, 4, 53, 804, DateTimeKind.Utc).AddTicks(5213),
+                            CreatedAt = new DateTime(2026, 4, 29, 12, 16, 45, 432, DateTimeKind.Utc).AddTicks(4531),
                             DescriptionAr = "أنهِ اختباراً في أقل من 30% من الوقت مع 80%+",
                             DescriptionEn = "Complete a timed test in <30% time with 80%+",
                             Icon = "⚡",
@@ -450,7 +450,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                             Id = 9,
                             BadgeType = 9,
                             BonusPoints = 35,
-                            CreatedAt = new DateTime(2026, 4, 16, 6, 4, 53, 804, DateTimeKind.Utc).AddTicks(5214),
+                            CreatedAt = new DateTime(2026, 4, 29, 12, 16, 45, 432, DateTimeKind.Utc).AddTicks(4534),
                             CriteriaType = "UnitCount",
                             CriteriaValue = 5,
                             DescriptionAr = "أكمل اختبارات من 5 وحدات مختلفة",
@@ -466,7 +466,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                             Id = 10,
                             BadgeType = 10,
                             BonusPoints = 75,
-                            CreatedAt = new DateTime(2026, 4, 16, 6, 4, 53, 804, DateTimeKind.Utc).AddTicks(5215),
+                            CreatedAt = new DateTime(2026, 4, 29, 12, 16, 45, 432, DateTimeKind.Utc).AddTicks(4536),
                             DescriptionAr = "أكمل اختباراً في كل وحدة",
                             DescriptionEn = "Complete at least one test in every unit",
                             Icon = "📚",
@@ -1232,7 +1232,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2026, 4, 16, 6, 4, 53, 804, DateTimeKind.Utc).AddTicks(4928),
+                            CreatedAt = new DateTime(2026, 4, 29, 12, 16, 45, 432, DateTimeKind.Utc).AddTicks(3649),
                             DisplayOrder = 1,
                             IsActive = true,
                             IsDeleted = false,
@@ -1244,7 +1244,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2026, 4, 16, 6, 4, 53, 804, DateTimeKind.Utc).AddTicks(4939),
+                            CreatedAt = new DateTime(2026, 4, 29, 12, 16, 45, 432, DateTimeKind.Utc).AddTicks(3670),
                             DisplayOrder = 2,
                             IsActive = true,
                             IsDeleted = false,
@@ -1256,7 +1256,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2026, 4, 16, 6, 4, 53, 804, DateTimeKind.Utc).AddTicks(4941),
+                            CreatedAt = new DateTime(2026, 4, 29, 12, 16, 45, 432, DateTimeKind.Utc).AddTicks(3672),
                             DisplayOrder = 3,
                             IsActive = true,
                             IsDeleted = false,
@@ -1268,7 +1268,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedAt = new DateTime(2026, 4, 16, 6, 4, 53, 804, DateTimeKind.Utc).AddTicks(4942),
+                            CreatedAt = new DateTime(2026, 4, 29, 12, 16, 45, 432, DateTimeKind.Utc).AddTicks(3674),
                             DisplayOrder = 4,
                             IsActive = true,
                             IsDeleted = false,
@@ -1280,7 +1280,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                         new
                         {
                             Id = 5,
-                            CreatedAt = new DateTime(2026, 4, 16, 6, 4, 53, 804, DateTimeKind.Utc).AddTicks(4943),
+                            CreatedAt = new DateTime(2026, 4, 29, 12, 16, 45, 432, DateTimeKind.Utc).AddTicks(3676),
                             DisplayOrder = 5,
                             IsActive = true,
                             IsDeleted = false,
@@ -1292,7 +1292,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                         new
                         {
                             Id = 6,
-                            CreatedAt = new DateTime(2026, 4, 16, 6, 4, 53, 804, DateTimeKind.Utc).AddTicks(4978),
+                            CreatedAt = new DateTime(2026, 4, 29, 12, 16, 45, 432, DateTimeKind.Utc).AddTicks(3678),
                             DisplayOrder = 6,
                             IsActive = true,
                             IsDeleted = false,
@@ -1304,7 +1304,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                         new
                         {
                             Id = 7,
-                            CreatedAt = new DateTime(2026, 4, 16, 6, 4, 53, 804, DateTimeKind.Utc).AddTicks(4979),
+                            CreatedAt = new DateTime(2026, 4, 29, 12, 16, 45, 432, DateTimeKind.Utc).AddTicks(3679),
                             DisplayOrder = 7,
                             IsActive = true,
                             IsDeleted = false,
@@ -1316,7 +1316,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                         new
                         {
                             Id = 8,
-                            CreatedAt = new DateTime(2026, 4, 16, 6, 4, 53, 804, DateTimeKind.Utc).AddTicks(4980),
+                            CreatedAt = new DateTime(2026, 4, 29, 12, 16, 45, 432, DateTimeKind.Utc).AddTicks(3681),
                             DisplayOrder = 8,
                             IsActive = true,
                             IsDeleted = false,
@@ -1328,7 +1328,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                         new
                         {
                             Id = 9,
-                            CreatedAt = new DateTime(2026, 4, 16, 6, 4, 53, 804, DateTimeKind.Utc).AddTicks(4981),
+                            CreatedAt = new DateTime(2026, 4, 29, 12, 16, 45, 432, DateTimeKind.Utc).AddTicks(3683),
                             DisplayOrder = 9,
                             IsActive = true,
                             IsDeleted = false,
@@ -3123,13 +3123,13 @@ namespace EnglishPlatform.Infrastructure.Migrations
                     b.HasOne("EnglishPlatform.Domain.Entities.TestAttempt", "Attempt")
                         .WithMany("AttemptAnswers")
                         .HasForeignKey("AttemptId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("EnglishPlatform.Domain.Entities.Question", "Question")
                         .WithMany()
                         .HasForeignKey("QuestionId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Attempt");
@@ -3142,7 +3142,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                     b.HasOne("EnglishPlatform.Domain.Entities.Grade", "Grade")
                         .WithMany()
                         .HasForeignKey("GradeId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Grade");
@@ -3165,7 +3165,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                     b.HasOne("EnglishPlatform.Domain.Entities.DragDropGameSession", "Session")
                         .WithMany("Attempts")
                         .HasForeignKey("SessionId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Item");
@@ -3180,7 +3180,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                     b.HasOne("EnglishPlatform.Domain.Entities.DragDropQuestion", "DragDropQuestion")
                         .WithMany("Sessions")
                         .HasForeignKey("DragDropQuestionId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("EnglishPlatform.Domain.Entities.ApplicationUser", "User")
@@ -3204,7 +3204,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                     b.HasOne("EnglishPlatform.Domain.Entities.DragDropQuestion", "DragDropQuestion")
                         .WithMany("Items")
                         .HasForeignKey("DragDropQuestionId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("CorrectZone");
@@ -3217,7 +3217,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                     b.HasOne("EnglishPlatform.Domain.Entities.Grade", "Grade")
                         .WithMany()
                         .HasForeignKey("GradeId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Grade");
@@ -3228,7 +3228,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                     b.HasOne("EnglishPlatform.Domain.Entities.DragDropQuestion", "DragDropQuestion")
                         .WithMany("Zones")
                         .HasForeignKey("DragDropQuestionId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("DragDropQuestion");
@@ -3239,7 +3239,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                     b.HasOne("EnglishPlatform.Domain.Entities.FlipCardGameSession", "Session")
                         .WithMany("Attempts")
                         .HasForeignKey("SessionId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Session");
@@ -3250,7 +3250,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                     b.HasOne("EnglishPlatform.Domain.Entities.FlipCardQuestion", "FlipCardQuestion")
                         .WithMany("Sessions")
                         .HasForeignKey("FlipCardQuestionId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("EnglishPlatform.Domain.Entities.ApplicationUser", "User")
@@ -3268,7 +3268,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                     b.HasOne("EnglishPlatform.Domain.Entities.FlipCardQuestion", "FlipCardQuestion")
                         .WithMany("Pairs")
                         .HasForeignKey("FlipCardQuestionId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("FlipCardQuestion");
@@ -3279,7 +3279,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                     b.HasOne("EnglishPlatform.Domain.Entities.Grade", "Grade")
                         .WithMany()
                         .HasForeignKey("GradeId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Grade");
@@ -3290,7 +3290,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                     b.HasOne("EnglishPlatform.Domain.Entities.Grade", "Grade")
                         .WithMany()
                         .HasForeignKey("GradeId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Grade");
@@ -3301,7 +3301,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                     b.HasOne("EnglishPlatform.Domain.Entities.Grade", "Grade")
                         .WithMany()
                         .HasForeignKey("GradeId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("EnglishPlatform.Domain.Entities.ApplicationUser", "User")
@@ -3320,7 +3320,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                     b.HasOne("EnglishPlatform.Domain.Entities.Unit", "Unit")
                         .WithMany("Lessons")
                         .HasForeignKey("UnitId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Unit");
@@ -3331,7 +3331,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                     b.HasOne("EnglishPlatform.Domain.Entities.MatchingGameSession", "Session")
                         .WithMany("Attempts")
                         .HasForeignKey("SessionId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Session");
@@ -3342,7 +3342,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                     b.HasOne("EnglishPlatform.Domain.Entities.Grade", "Grade")
                         .WithMany()
                         .HasForeignKey("GradeId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Grade");
@@ -3353,7 +3353,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                     b.HasOne("EnglishPlatform.Domain.Entities.MatchingGame", "MatchingGame")
                         .WithMany("Pairs")
                         .HasForeignKey("MatchingGameId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("MatchingGame");
@@ -3364,7 +3364,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                     b.HasOne("EnglishPlatform.Domain.Entities.MatchingGame", "MatchingGame")
                         .WithMany("Sessions")
                         .HasForeignKey("MatchingGameId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("EnglishPlatform.Domain.Entities.ApplicationUser", "User")
@@ -3382,7 +3382,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                     b.HasOne("EnglishPlatform.Domain.Entities.Question", "Question")
                         .WithMany("MatchingPairs")
                         .HasForeignKey("QuestionId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Question");
@@ -3412,7 +3412,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                     b.HasOne("EnglishPlatform.Domain.Entities.Grade", "Grade")
                         .WithMany()
                         .HasForeignKey("GradeId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Grade");
@@ -3423,7 +3423,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                     b.HasOne("EnglishPlatform.Domain.Entities.Question", "Question")
                         .WithMany("QuestionOptions")
                         .HasForeignKey("QuestionId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Question");
@@ -3445,13 +3445,13 @@ namespace EnglishPlatform.Infrastructure.Migrations
                     b.HasOne("EnglishPlatform.Domain.Entities.Grade", "Grade")
                         .WithMany()
                         .HasForeignKey("GradeId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("EnglishPlatform.Domain.Entities.ApplicationUser", "User")
                         .WithOne("StudentProgress")
                         .HasForeignKey("EnglishPlatform.Domain.Entities.StudentProgress", "UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Grade");
@@ -3464,7 +3464,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                     b.HasOne("EnglishPlatform.Domain.Entities.Question", "Question")
                         .WithMany("SubQuestions")
                         .HasForeignKey("QuestionId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Question");
@@ -3475,7 +3475,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                     b.HasOne("EnglishPlatform.Domain.Entities.Grade", "Grade")
                         .WithMany("Tests")
                         .HasForeignKey("GradeId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("EnglishPlatform.Domain.Entities.Lesson", "Lesson")
@@ -3500,7 +3500,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                     b.HasOne("EnglishPlatform.Domain.Entities.Test", "Test")
                         .WithMany("TestAttempts")
                         .HasForeignKey("TestId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("EnglishPlatform.Domain.Entities.ApplicationUser", "User")
@@ -3518,13 +3518,13 @@ namespace EnglishPlatform.Infrastructure.Migrations
                     b.HasOne("EnglishPlatform.Domain.Entities.Question", "Question")
                         .WithMany("TestQuestions")
                         .HasForeignKey("QuestionId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("EnglishPlatform.Domain.Entities.Test", "Test")
                         .WithMany("TestQuestions")
                         .HasForeignKey("TestId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Question");
@@ -3537,7 +3537,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                     b.HasOne("EnglishPlatform.Domain.Entities.Grade", "Grade")
                         .WithMany("Units")
                         .HasForeignKey("GradeId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Grade");
@@ -3548,13 +3548,13 @@ namespace EnglishPlatform.Infrastructure.Migrations
                     b.HasOne("EnglishPlatform.Domain.Entities.Badge", "Badge")
                         .WithMany("UserBadges")
                         .HasForeignKey("BadgeId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("EnglishPlatform.Domain.Entities.ApplicationUser", "User")
                         .WithMany("UserBadges")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Badge");
@@ -3567,13 +3567,13 @@ namespace EnglishPlatform.Infrastructure.Migrations
                     b.HasOne("EnglishPlatform.Domain.Entities.Notification", "Notification")
                         .WithMany("UserNotifications")
                         .HasForeignKey("NotificationId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("EnglishPlatform.Domain.Entities.ApplicationUser", "User")
                         .WithMany("UserNotifications")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Notification");
@@ -3586,13 +3586,13 @@ namespace EnglishPlatform.Infrastructure.Migrations
                     b.HasOne("EnglishPlatform.Domain.Entities.SubscriptionPlan", "Plan")
                         .WithMany("UserSubscriptions")
                         .HasForeignKey("PlanId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("EnglishPlatform.Domain.Entities.ApplicationUser", "User")
                         .WithMany("UserSubscriptions")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Plan");
@@ -3605,7 +3605,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                     b.HasOne("EnglishPlatform.Domain.Entities.Grade", "Grade")
                         .WithMany()
                         .HasForeignKey("GradeId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("EnglishPlatform.Domain.Entities.ApplicationUser", "User")
@@ -3623,7 +3623,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                     b.HasOne("EnglishPlatform.Domain.Entities.Grade", "Grade")
                         .WithMany()
                         .HasForeignKey("GradeId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Grade");
@@ -3634,13 +3634,13 @@ namespace EnglishPlatform.Infrastructure.Migrations
                     b.HasOne("EnglishPlatform.Domain.Entities.WheelQuestion", "Question")
                         .WithMany()
                         .HasForeignKey("QuestionId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("EnglishPlatform.Domain.Entities.WheelGameSession", "Session")
                         .WithMany("Attempts")
                         .HasForeignKey("SessionId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Question");
@@ -3653,7 +3653,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                     b.HasOne("EnglishPlatform.Domain.Entities.Grade", "Grade")
                         .WithMany()
                         .HasForeignKey("GradeId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Grade");
@@ -3664,7 +3664,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
                 });
 
@@ -3673,7 +3673,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                     b.HasOne("EnglishPlatform.Domain.Entities.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
                 });
 
@@ -3682,7 +3682,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                     b.HasOne("EnglishPlatform.Domain.Entities.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
                 });
 
@@ -3691,13 +3691,13 @@ namespace EnglishPlatform.Infrastructure.Migrations
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("EnglishPlatform.Domain.Entities.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
                 });
 
@@ -3706,7 +3706,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                     b.HasOne("EnglishPlatform.Domain.Entities.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
                 });
 

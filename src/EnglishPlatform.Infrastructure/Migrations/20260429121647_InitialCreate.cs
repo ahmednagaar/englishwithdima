@@ -209,8 +209,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                         name: "FK_AspNetRoleClaims_AspNetRoles_RoleId",
                         column: x => x.RoleId,
                         principalTable: "AspNetRoles",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -288,8 +287,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                         name: "FK_BookingRequests_Grades_GradeId",
                         column: x => x.GradeId,
                         principalTable: "Grades",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -326,8 +324,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                         name: "FK_DragDropQuestions_Grades_GradeId",
                         column: x => x.GradeId,
                         principalTable: "Grades",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -373,8 +370,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                         name: "FK_FlipCardQuestions_Grades_GradeId",
                         column: x => x.GradeId,
                         principalTable: "Grades",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -395,8 +391,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                         name: "FK_GuestSessions_Grades_GradeId",
                         column: x => x.GradeId,
                         principalTable: "Grades",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -440,8 +435,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                         name: "FK_MatchingGames_Grades_GradeId",
                         column: x => x.GradeId,
                         principalTable: "Grades",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -484,8 +478,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                         name: "FK_Questions_Grades_GradeId",
                         column: x => x.GradeId,
                         principalTable: "Grades",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -513,8 +506,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                         name: "FK_Units_Grades_GradeId",
                         column: x => x.GradeId,
                         principalTable: "Grades",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -554,8 +546,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                         name: "FK_WheelQuestions_Grades_GradeId",
                         column: x => x.GradeId,
                         principalTable: "Grades",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -586,8 +577,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                         name: "FK_WheelSpinSegments_Grades_GradeId",
                         column: x => x.GradeId,
                         principalTable: "Grades",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -607,8 +597,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                         name: "FK_AspNetUserClaims_AspNetUsers_UserId",
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -627,8 +616,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                         name: "FK_AspNetUserLogins_AspNetUsers_UserId",
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -645,14 +633,12 @@ namespace EnglishPlatform.Infrastructure.Migrations
                         name: "FK_AspNetUserRoles_AspNetRoles_RoleId",
                         column: x => x.RoleId,
                         principalTable: "AspNetRoles",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_AspNetUserRoles_AspNetUsers_UserId",
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -671,8 +657,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                         name: "FK_AspNetUserTokens_AspNetUsers_UserId",
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -705,8 +690,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                         name: "FK_LeaderboardEntries_Grades_GradeId",
                         column: x => x.GradeId,
                         principalTable: "Grades",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -787,14 +771,12 @@ namespace EnglishPlatform.Infrastructure.Migrations
                         name: "FK_StudentProgress_AspNetUsers_UserId",
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_StudentProgress_Grades_GradeId",
                         column: x => x.GradeId,
                         principalTable: "Grades",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -812,14 +794,12 @@ namespace EnglishPlatform.Infrastructure.Migrations
                         name: "FK_UserBadges_AspNetUsers_UserId",
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_UserBadges_Badges_BadgeId",
                         column: x => x.BadgeId,
                         principalTable: "Badges",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -840,14 +820,12 @@ namespace EnglishPlatform.Infrastructure.Migrations
                         name: "FK_UserNotifications_AspNetUsers_UserId",
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_UserNotifications_Notifications_NotificationId",
                         column: x => x.NotificationId,
                         principalTable: "Notifications",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -876,14 +854,12 @@ namespace EnglishPlatform.Infrastructure.Migrations
                         name: "FK_UserSubscriptions_AspNetUsers_UserId",
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_UserSubscriptions_SubscriptionPlans_PlanId",
                         column: x => x.PlanId,
                         principalTable: "SubscriptionPlans",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -927,8 +903,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                         name: "FK_WheelGameSessions_Grades_GradeId",
                         column: x => x.GradeId,
                         principalTable: "Grades",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -969,8 +944,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                         name: "FK_DragDropGameSessions_DragDropQuestions_DragDropQuestionId",
                         column: x => x.DragDropQuestionId,
                         principalTable: "DragDropQuestions",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -993,8 +967,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                         name: "FK_DragDropZones_DragDropQuestions_DragDropQuestionId",
                         column: x => x.DragDropQuestionId,
                         principalTable: "DragDropQuestions",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -1036,8 +1009,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                         name: "FK_FlipCardGameSessions_FlipCardQuestions_FlipCardQuestionId",
                         column: x => x.FlipCardQuestionId,
                         principalTable: "FlipCardQuestions",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -1066,8 +1038,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                         name: "FK_FlipCardPairs_FlipCardQuestions_FlipCardQuestionId",
                         column: x => x.FlipCardQuestionId,
                         principalTable: "FlipCardQuestions",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -1101,8 +1072,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                         name: "FK_MatchingGamePairs_MatchingGames_MatchingGameId",
                         column: x => x.MatchingGameId,
                         principalTable: "MatchingGames",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -1143,8 +1113,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                         name: "FK_MatchingGameSessions_MatchingGames_MatchingGameId",
                         column: x => x.MatchingGameId,
                         principalTable: "MatchingGames",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -1173,8 +1142,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                         name: "FK_MatchingPairs_Questions_QuestionId",
                         column: x => x.QuestionId,
                         principalTable: "Questions",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -1202,8 +1170,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                         name: "FK_QuestionOptions_Questions_QuestionId",
                         column: x => x.QuestionId,
                         principalTable: "Questions",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -1234,8 +1201,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                         name: "FK_SubQuestions_Questions_QuestionId",
                         column: x => x.QuestionId,
                         principalTable: "Questions",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -1263,8 +1229,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                         name: "FK_Lessons_Units_UnitId",
                         column: x => x.UnitId,
                         principalTable: "Units",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -1290,14 +1255,12 @@ namespace EnglishPlatform.Infrastructure.Migrations
                         name: "FK_WheelQuestionAttempts_WheelGameSessions_SessionId",
                         column: x => x.SessionId,
                         principalTable: "WheelGameSessions",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_WheelQuestionAttempts_WheelQuestions_QuestionId",
                         column: x => x.QuestionId,
                         principalTable: "WheelQuestions",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -1321,8 +1284,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                         name: "FK_DragDropItems_DragDropQuestions_DragDropQuestionId",
                         column: x => x.DragDropQuestionId,
                         principalTable: "DragDropQuestions",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_DragDropItems_DragDropZones_CorrectZoneId",
                         column: x => x.CorrectZoneId,
@@ -1354,8 +1316,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                         name: "FK_FlipCardAttempts_FlipCardGameSessions_SessionId",
                         column: x => x.SessionId,
                         principalTable: "FlipCardGameSessions",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -1378,8 +1339,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                         name: "FK_MatchingAttempts_MatchingGameSessions_SessionId",
                         column: x => x.SessionId,
                         principalTable: "MatchingGameSessions",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -1425,8 +1385,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                         name: "FK_Tests_Grades_GradeId",
                         column: x => x.GradeId,
                         principalTable: "Grades",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Tests_Lessons_LessonId",
                         column: x => x.LessonId,
@@ -1461,8 +1420,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                         name: "FK_DragDropAttempts_DragDropGameSessions_SessionId",
                         column: x => x.SessionId,
                         principalTable: "DragDropGameSessions",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_DragDropAttempts_DragDropItems_ItemId",
                         column: x => x.ItemId,
@@ -1520,8 +1478,7 @@ namespace EnglishPlatform.Infrastructure.Migrations
                         name: "FK_TestAttempts_Tests_TestId",
                         column: x => x.TestId,
                         principalTable: "Tests",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -1548,14 +1505,12 @@ namespace EnglishPlatform.Infrastructure.Migrations
                         name: "FK_TestQuestions_Questions_QuestionId",
                         column: x => x.QuestionId,
                         principalTable: "Questions",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_TestQuestions_Tests_TestId",
                         column: x => x.TestId,
                         principalTable: "Tests",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -1585,14 +1540,12 @@ namespace EnglishPlatform.Infrastructure.Migrations
                         name: "FK_AttemptAnswers_Questions_QuestionId",
                         column: x => x.QuestionId,
                         principalTable: "Questions",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_AttemptAnswers_TestAttempts_AttemptId",
                         column: x => x.AttemptId,
                         principalTable: "TestAttempts",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.InsertData(
@@ -1600,16 +1553,16 @@ namespace EnglishPlatform.Infrastructure.Migrations
                 columns: new[] { "Id", "BadgeType", "BonusPoints", "CreatedAt", "CreatedBy", "CriteriaSkill", "CriteriaType", "CriteriaValue", "DeletedAt", "DescriptionAr", "DescriptionEn", "Icon", "IconUrl", "IsActive", "IsDeleted", "NameAr", "NameEn", "PointThreshold", "UpdatedAt", "UpdatedBy" },
                 values: new object[,]
                 {
-                    { 1, 1, 10, new DateTime(2026, 4, 16, 6, 4, 53, 804, DateTimeKind.Utc).AddTicks(5193), null, null, null, null, null, "أكمل أول اختبار", "Complete your first test", "🎯", null, true, false, "الخطوة الأولى", "First Steps", null, null, null },
-                    { 2, 2, 50, new DateTime(2026, 4, 16, 6, 4, 53, 804, DateTimeKind.Utc).AddTicks(5204), null, null, null, null, null, "احصل على 100% في أي اختبار", "Get 100% on any test", "⭐", null, true, false, "العلامة الكاملة", "Perfect Score", null, null, null },
-                    { 3, 3, 25, new DateTime(2026, 4, 16, 6, 4, 53, 804, DateTimeKind.Utc).AddTicks(5205), null, null, "Streak", 7, null, "نشاط 7 أيام متتالية", "7 consecutive days of activity", "🔥", null, true, false, "سلسلة 7 أيام", "7 Day Streak", null, null, null },
-                    { 4, 4, 100, new DateTime(2026, 4, 16, 6, 4, 53, 804, DateTimeKind.Utc).AddTicks(5207), null, null, "Streak", 30, null, "نشاط 30 يوم متتالي", "30 consecutive days of activity", "💪", null, true, false, "سلسلة 30 يوم", "30 Day Streak", null, null, null },
-                    { 5, 5, 50, new DateTime(2026, 4, 16, 6, 4, 53, 804, DateTimeKind.Utc).AddTicks(5209), null, null, null, null, null, "احتل المركز الثالث أو أعلى", "Reach top 3 on grade leaderboard", "🥉", null, true, false, "ضمن أفضل 3", "Top 3", null, null, null },
-                    { 6, 6, 100, new DateTime(2026, 4, 16, 6, 4, 53, 804, DateTimeKind.Utc).AddTicks(5210), null, null, null, null, null, "احتل المركز الأول", "Reach #1 on grade leaderboard", "🏆", null, true, false, "المركز الأول", "Champion", null, null, null },
-                    { 7, 7, 40, new DateTime(2026, 4, 16, 6, 4, 53, 804, DateTimeKind.Utc).AddTicks(5211), null, null, null, null, null, "أكمل جميع أنواع الألعاب", "Complete all 4 game types", "🎮", null, true, false, "محترف الألعاب", "Game Master", null, null, null },
-                    { 8, 8, 30, new DateTime(2026, 4, 16, 6, 4, 53, 804, DateTimeKind.Utc).AddTicks(5213), null, null, null, null, null, "أنهِ اختباراً في أقل من 30% من الوقت مع 80%+", "Complete a timed test in <30% time with 80%+", "⚡", null, true, false, "سريع البرق", "Speed Runner", null, null, null },
-                    { 9, 9, 35, new DateTime(2026, 4, 16, 6, 4, 53, 804, DateTimeKind.Utc).AddTicks(5214), null, null, "UnitCount", 5, null, "أكمل اختبارات من 5 وحدات مختلفة", "Complete tests from 5 different units", "🧭", null, true, false, "المستكشف", "Explorer", null, null, null },
-                    { 10, 10, 75, new DateTime(2026, 4, 16, 6, 4, 53, 804, DateTimeKind.Utc).AddTicks(5215), null, null, null, null, null, "أكمل اختباراً في كل وحدة", "Complete at least one test in every unit", "📚", null, true, false, "متفوق الوحدات", "All Units", null, null, null }
+                    { 1, 1, 10, new DateTime(2026, 4, 29, 12, 16, 45, 432, DateTimeKind.Utc).AddTicks(4488), null, null, null, null, null, "أكمل أول اختبار", "Complete your first test", "🎯", null, true, false, "الخطوة الأولى", "First Steps", null, null, null },
+                    { 2, 2, 50, new DateTime(2026, 4, 29, 12, 16, 45, 432, DateTimeKind.Utc).AddTicks(4512), null, null, null, null, null, "احصل على 100% في أي اختبار", "Get 100% on any test", "⭐", null, true, false, "العلامة الكاملة", "Perfect Score", null, null, null },
+                    { 3, 3, 25, new DateTime(2026, 4, 29, 12, 16, 45, 432, DateTimeKind.Utc).AddTicks(4514), null, null, "Streak", 7, null, "نشاط 7 أيام متتالية", "7 consecutive days of activity", "🔥", null, true, false, "سلسلة 7 أيام", "7 Day Streak", null, null, null },
+                    { 4, 4, 100, new DateTime(2026, 4, 29, 12, 16, 45, 432, DateTimeKind.Utc).AddTicks(4517), null, null, "Streak", 30, null, "نشاط 30 يوم متتالي", "30 consecutive days of activity", "💪", null, true, false, "سلسلة 30 يوم", "30 Day Streak", null, null, null },
+                    { 5, 5, 50, new DateTime(2026, 4, 29, 12, 16, 45, 432, DateTimeKind.Utc).AddTicks(4525), null, null, null, null, null, "احتل المركز الثالث أو أعلى", "Reach top 3 on grade leaderboard", "🥉", null, true, false, "ضمن أفضل 3", "Top 3", null, null, null },
+                    { 6, 6, 100, new DateTime(2026, 4, 29, 12, 16, 45, 432, DateTimeKind.Utc).AddTicks(4526), null, null, null, null, null, "احتل المركز الأول", "Reach #1 on grade leaderboard", "🏆", null, true, false, "المركز الأول", "Champion", null, null, null },
+                    { 7, 7, 40, new DateTime(2026, 4, 29, 12, 16, 45, 432, DateTimeKind.Utc).AddTicks(4530), null, null, null, null, null, "أكمل جميع أنواع الألعاب", "Complete all 4 game types", "🎮", null, true, false, "محترف الألعاب", "Game Master", null, null, null },
+                    { 8, 8, 30, new DateTime(2026, 4, 29, 12, 16, 45, 432, DateTimeKind.Utc).AddTicks(4531), null, null, null, null, null, "أنهِ اختباراً في أقل من 30% من الوقت مع 80%+", "Complete a timed test in <30% time with 80%+", "⚡", null, true, false, "سريع البرق", "Speed Runner", null, null, null },
+                    { 9, 9, 35, new DateTime(2026, 4, 29, 12, 16, 45, 432, DateTimeKind.Utc).AddTicks(4534), null, null, "UnitCount", 5, null, "أكمل اختبارات من 5 وحدات مختلفة", "Complete tests from 5 different units", "🧭", null, true, false, "المستكشف", "Explorer", null, null, null },
+                    { 10, 10, 75, new DateTime(2026, 4, 29, 12, 16, 45, 432, DateTimeKind.Utc).AddTicks(4536), null, null, null, null, null, "أكمل اختباراً في كل وحدة", "Complete at least one test in every unit", "📚", null, true, false, "متفوق الوحدات", "All Units", null, null, null }
                 });
 
             migrationBuilder.InsertData(
@@ -1617,15 +1570,15 @@ namespace EnglishPlatform.Infrastructure.Migrations
                 columns: new[] { "Id", "CreatedAt", "CreatedBy", "DeletedAt", "DisplayOrder", "IsActive", "IsDeleted", "Level", "NameAr", "NameEn", "SchoolType", "UpdatedAt", "UpdatedBy" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2026, 4, 16, 6, 4, 53, 804, DateTimeKind.Utc).AddTicks(4928), null, null, 1, true, false, 1, "الصف الأول الابتدائي", "Grade 1 Primary", "Primary", null, null },
-                    { 2, new DateTime(2026, 4, 16, 6, 4, 53, 804, DateTimeKind.Utc).AddTicks(4939), null, null, 2, true, false, 2, "الصف الثاني الابتدائي", "Grade 2 Primary", "Primary", null, null },
-                    { 3, new DateTime(2026, 4, 16, 6, 4, 53, 804, DateTimeKind.Utc).AddTicks(4941), null, null, 3, true, false, 3, "الصف الثالث الابتدائي", "Grade 3 Primary", "Primary", null, null },
-                    { 4, new DateTime(2026, 4, 16, 6, 4, 53, 804, DateTimeKind.Utc).AddTicks(4942), null, null, 4, true, false, 4, "الصف الرابع الابتدائي", "Grade 4 Primary", "Primary", null, null },
-                    { 5, new DateTime(2026, 4, 16, 6, 4, 53, 804, DateTimeKind.Utc).AddTicks(4943), null, null, 5, true, false, 5, "الصف الخامس الابتدائي", "Grade 5 Primary", "Primary", null, null },
-                    { 6, new DateTime(2026, 4, 16, 6, 4, 53, 804, DateTimeKind.Utc).AddTicks(4978), null, null, 6, true, false, 6, "الصف السادس الابتدائي", "Grade 6 Primary", "Primary", null, null },
-                    { 7, new DateTime(2026, 4, 16, 6, 4, 53, 804, DateTimeKind.Utc).AddTicks(4979), null, null, 7, true, false, 7, "الصف الأول الإعدادي", "Grade 1 Preparatory", "Preparatory", null, null },
-                    { 8, new DateTime(2026, 4, 16, 6, 4, 53, 804, DateTimeKind.Utc).AddTicks(4980), null, null, 8, true, false, 8, "الصف الثاني الإعدادي", "Grade 2 Preparatory", "Preparatory", null, null },
-                    { 9, new DateTime(2026, 4, 16, 6, 4, 53, 804, DateTimeKind.Utc).AddTicks(4981), null, null, 9, true, false, 9, "الصف الثالث الإعدادي", "Grade 3 Preparatory", "Preparatory", null, null }
+                    { 1, new DateTime(2026, 4, 29, 12, 16, 45, 432, DateTimeKind.Utc).AddTicks(3649), null, null, 1, true, false, 1, "الصف الأول الابتدائي", "Grade 1 Primary", "Primary", null, null },
+                    { 2, new DateTime(2026, 4, 29, 12, 16, 45, 432, DateTimeKind.Utc).AddTicks(3670), null, null, 2, true, false, 2, "الصف الثاني الابتدائي", "Grade 2 Primary", "Primary", null, null },
+                    { 3, new DateTime(2026, 4, 29, 12, 16, 45, 432, DateTimeKind.Utc).AddTicks(3672), null, null, 3, true, false, 3, "الصف الثالث الابتدائي", "Grade 3 Primary", "Primary", null, null },
+                    { 4, new DateTime(2026, 4, 29, 12, 16, 45, 432, DateTimeKind.Utc).AddTicks(3674), null, null, 4, true, false, 4, "الصف الرابع الابتدائي", "Grade 4 Primary", "Primary", null, null },
+                    { 5, new DateTime(2026, 4, 29, 12, 16, 45, 432, DateTimeKind.Utc).AddTicks(3676), null, null, 5, true, false, 5, "الصف الخامس الابتدائي", "Grade 5 Primary", "Primary", null, null },
+                    { 6, new DateTime(2026, 4, 29, 12, 16, 45, 432, DateTimeKind.Utc).AddTicks(3678), null, null, 6, true, false, 6, "الصف السادس الابتدائي", "Grade 6 Primary", "Primary", null, null },
+                    { 7, new DateTime(2026, 4, 29, 12, 16, 45, 432, DateTimeKind.Utc).AddTicks(3679), null, null, 7, true, false, 7, "الصف الأول الإعدادي", "Grade 1 Preparatory", "Preparatory", null, null },
+                    { 8, new DateTime(2026, 4, 29, 12, 16, 45, 432, DateTimeKind.Utc).AddTicks(3681), null, null, 8, true, false, 8, "الصف الثاني الإعدادي", "Grade 2 Preparatory", "Preparatory", null, null },
+                    { 9, new DateTime(2026, 4, 29, 12, 16, 45, 432, DateTimeKind.Utc).AddTicks(3683), null, null, 9, true, false, 9, "الصف الثالث الإعدادي", "Grade 3 Preparatory", "Preparatory", null, null }
                 });
 
             migrationBuilder.CreateIndex(
