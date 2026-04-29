@@ -4,6 +4,7 @@ import { RouterLink, Router } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { AuthService } from '../../core/services/auth.service';
 import { ApiService } from '../../core/services/api.service';
+import { SeoService } from '../../core/services/seo.service';
 
 @Component({
   selector: 'app-profile',
@@ -53,6 +54,11 @@ import { ApiService } from '../../core/services/api.service';
             <a routerLink="/games" class="profile-link">
               <span class="pl-icon">🎮</span>
               <span>الألعاب التعليمية</span>
+              <i class="fas fa-chevron-left"></i>
+            </a>
+            <a routerLink="/leaderboard" class="profile-link">
+              <span class="pl-icon">🏆</span>
+              <span>المتصدرين</span>
               <i class="fas fa-chevron-left"></i>
             </a>
             <a routerLink="/booking" class="profile-link">
@@ -151,10 +157,15 @@ export class ProfileComponent implements OnInit {
   constructor(
     private auth: AuthService,
     private api: ApiService,
-    private router: Router
+    private router: Router,
+    private seo: SeoService
   ) {}
 
   ngOnInit() {
+    this.seo.setPage({
+      titleDefault: 'الملف الشخصي',
+      descriptionDefault: 'ملفك الشخصي — تقدمك ونتائجك في منصة الإنجليزية مع ديما',
+    });
     const currentUser = this.auth.currentUser();
     if (currentUser) {
       this.user.set(currentUser);

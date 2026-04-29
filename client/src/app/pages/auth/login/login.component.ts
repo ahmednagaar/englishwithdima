@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterLink, Router, ActivatedRoute } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { AuthService } from '../../../core/services/auth.service';
+import { SeoService } from '../../../core/services/seo.service';
 
 @Component({
   selector: 'app-login',
@@ -91,7 +92,7 @@ import { AuthService } from '../../../core/services/auth.service';
   `,
   styleUrl: './login.component.scss'
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   form = { userName: '', password: '' };
   pinForm = { studentCode: '', pin: '' };
   error = '';
@@ -104,8 +105,16 @@ export class LoginComponent {
     private auth: AuthService,
     private router: Router,
     private route: ActivatedRoute,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private seo: SeoService
   ) {}
+
+  ngOnInit() {
+    this.seo.setPage({
+      titleDefault: 'تسجيل الدخول',
+      descriptionDefault: 'سجّل دخولك لمنصة الإنجليزية مع ديما — اختبارات وألعاب تعليمية تفاعلية',
+    });
+  }
 
   onLogin() {
     this.fieldErrors = { userName: '', password: '' };

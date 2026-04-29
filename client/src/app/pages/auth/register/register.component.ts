@@ -5,6 +5,7 @@ import { RouterLink, Router } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { AuthService } from '../../../core/services/auth.service';
 import { ApiService } from '../../../core/services/api.service';
+import { SeoService } from '../../../core/services/seo.service';
 import { Grade } from '../../../core/models';
 
 @Component({
@@ -212,9 +213,13 @@ export class RegisterComponent implements OnInit {
   step = 1;
   showPass = false;
 
-  constructor(private auth: AuthService, private api: ApiService, private router: Router, private translate: TranslateService) {}
+  constructor(private auth: AuthService, private api: ApiService, private router: Router, private translate: TranslateService, private seo: SeoService) {}
 
   ngOnInit() {
+    this.seo.setPage({
+      titleDefault: 'إنشاء حساب',
+      descriptionDefault: 'أنشئ حسابك في منصة الإنجليزية مع ديما — ابدأ رحلة تعلم الإنجليزية',
+    });
     this.api.getGrades().subscribe(res => { if (res.success) this.grades.set(res.data); });
   }
 

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { ApiService } from '../../core/services/api.service';
+import { SeoService } from '../../core/services/seo.service';
 import { Grade } from '../../core/models';
 
 @Component({
@@ -108,9 +109,14 @@ export class GradesComponent implements OnInit {
   prepGrades = signal<Grade[]>([]);
   loading = signal(true);
 
-  constructor(private api: ApiService) {}
+  constructor(private api: ApiService, private seo: SeoService) {}
 
   ngOnInit() {
+    this.seo.setPage({
+      titleDefault: 'الصفوف الدراسية',
+      descriptionDefault: 'اختر صفك الدراسي للبدء في اختبارات الإنجليزية — ابتدائي وإعدادي',
+      keywords: 'صفوف دراسية, ابتدائي, إعدادي, اختبارات إنجليزي, الإنجليزية مع ديما'
+    });
     this.api.getGrades().subscribe({
       next: res => {
         if (res.success) {
